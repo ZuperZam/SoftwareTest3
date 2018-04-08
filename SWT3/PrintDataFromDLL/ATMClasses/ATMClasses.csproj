@@ -43,6 +43,7 @@
     <Compile Include="DateFormatter.cs" />
     <Compile Include="Print.cs" />
     <Compile Include="TrackingValidation.cs" />
+    <Compile Include="TrackObject.cs" />
     <Compile Include="TransponderParsing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
