@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ATMClasses;
 using TransponderReceiver;
 
 namespace PrintDataFromDLL
@@ -24,8 +25,7 @@ namespace PrintDataFromDLL
            // Console.WriteLine(e.TransponderData.Count);
             foreach (var data in e.TransponderData)
             {
-                //Console.WriteLine(data);
-                string[] words = data.Split(';');
+                var words = TransponderParsing.TransponderParser(data);
 
                 Console.WriteLine("tag:\t\t\t" + words[0]);
                 Console.WriteLine("x-coordinate:\t\t" + words[1]);
