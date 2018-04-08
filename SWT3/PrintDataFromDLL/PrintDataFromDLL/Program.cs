@@ -33,7 +33,8 @@ namespace PrintDataFromDLL
                 Console.WriteLine("altitude:\t\t" + words[3]);
                 Console.WriteLine("timestamp:\t\t" + words[4]);
                 Console.WriteLine();
-                Console.WriteLine();
+                Console.WriteLine(TrackingValidation.IsTrackInMonitoredAirspace(words));
+                
             }
         }
     }
