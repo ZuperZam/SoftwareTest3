@@ -34,6 +34,7 @@ namespace PrintDataFromDLL
                 Console.WriteLine("timestamp:\t\t" + words[4]);
                 Console.WriteLine();
                 Console.WriteLine(TrackingValidation.IsTrackInMonitoredAirspace(words));
+                Console.WriteLine(DateFormatter.FormatTimestamp(words[4]));
                 
             }
         }
