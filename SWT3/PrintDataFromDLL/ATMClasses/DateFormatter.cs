@@ -13,12 +13,12 @@ namespace ATMClasses
         {
             string format = "yyyyMMddHHmmssfff";    //Set input format
             DateTime date = DateTime.ParseExact(timestamp, format, CultureInfo.CreateSpecificCulture("en-US"));
-            string dateformat = String.Format(new CultureInfo("en-US"), "{0:MMMM d}{1}{0:, yyyy, 'at' HH:mm:ss 'and' fff 'miliseconds'}", date, AddDaySuffix(date));   //Format date correctly
+            string dateformat = String.Format(new CultureInfo("en-US"), "{0:MMMM d}{1}{0:, yyyy, 'at' HH:mm:ss 'and' fff 'miliseconds'}", date, GetDaySuffix(date));   //Format date correctly
 
             return dateformat;
         }
 
-        private static string AddDaySuffix(DateTime timeStamp)
+        private static string GetDaySuffix(DateTime timeStamp)
         {
             //returns "st", "nd", "rd" or "th"
             return (timeStamp.Day % 10 == 1 && timeStamp.Day != 11) ? "st"
