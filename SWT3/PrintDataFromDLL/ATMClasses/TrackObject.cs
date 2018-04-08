@@ -15,5 +15,14 @@ namespace ATMClasses
         public string Timestamp { get; set; }
         public string HVelocity { get; set; }
         public string Direction { get; set; }
+
+        public TrackObject(List<string> trackInfo)
+        {
+            Tag = trackInfo[0];
+            XCoord = trackInfo[1];
+            YCoord = trackInfo[2];
+            Altitude = trackInfo[3];
+            Timestamp = trackInfo[4];
+        }
     }
 }
