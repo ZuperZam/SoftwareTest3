@@ -35,6 +35,33 @@ namespace ATM.Tests.Unit
         }
 
         [Test]
-        public void 
+        public void Track_SetTag_ReturnsExpectedTag()
+        {
+            Assert.AreEqual(_tag, _uut.Tag);
+        }
+
+        [Test]
+        public void Track_SetXCoord_ReturnsExpectedXCoord()
+        {
+            Assert.AreEqual(_xCoord, _uut.XCoord);
+        }
+
+        [Test]
+        public void Track_SetYCoord_ReturnsExpectedYCoord()
+        {
+            Assert.AreEqual(_yCoord, _uut.YCoord);
+        }
+
+        [Test]
+        public void Track_SetAltitude_ReturnsExpectedAltitude()
+        {
+            Assert.AreEqual(_altitude, _uut.Altitude);
+        }
+
+        [Test]
+        public void Track_SetTimestamp_ReturnsExpectedTimestamp()
+        {
+            Assert.AreEqual(_timestamp, _uut.Timestamp);
+        }
     }
 }
