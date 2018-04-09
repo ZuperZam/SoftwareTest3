@@ -23,24 +23,19 @@ namespace PrintDataFromDLL
 
         public static void OnTransponderDataReady(object sender, RawTransponderDataEventArgs e)
         {
-            foreach (var data in e.TransponderData)
+            Console.Clear();    //Clear old tracks
+
+            foreach (var data in e.TransponderData) //foreach string in the stringlist
             {
-                var words = TransponderParsing.TransponderParser(data);
+                var words = TransponderParsing.TransponderParser(data); //Parse string (contains all track data)
 
-                //Console.WriteLine("tag:\t\t\t" + words[0]);
-                //Console.WriteLine("x-coordinate:\t\t" + words[1]);
-                //Console.WriteLine("y-coordinate:\t\t" + words[2]);
-                //Console.WriteLine("altitude:\t\t" + words[3]);
-                //Console.WriteLine("timestamp:\t\t" + words[4]);
-                //Console.WriteLine();
-                //Console.WriteLine(TrackingValidation.IsTrackInMonitoredAirspace(words));
-                //Console.WriteLine(DateFormatter.FormatTimestamp(words[4]));
+                words[4] = DateFormatter.FormatTimestamp(words[4]); //Replace timestamp with better formatted date
 
-                words[4] = DateFormatter.FormatTimestamp(words[4]);
-
-                var track = new TrackObject(words);
-                Print.printTrack(track);
-                
+                if (TrackingValidation.IsTrackInMonitoredAirspace(words))   //Only if plane is inside the Monitored area
+                {
+                    var track = new TrackObject(words); //Make new trackObject
+                    Print.printTrack(track);    //print track data
+                }
             }
         }
     }
