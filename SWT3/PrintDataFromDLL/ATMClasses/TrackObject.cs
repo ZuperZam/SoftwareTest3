@@ -13,8 +13,6 @@ namespace ATMClasses
         public string YCoord { get; set; }
         public string Altitude { get; set; }
         public string Timestamp { get; set; }
-        public string HVelocity { get; set; }
-        public string Direction { get; set; }
 
         public TrackObject(List<string> trackInfo)
         {
