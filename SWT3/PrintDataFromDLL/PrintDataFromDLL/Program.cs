@@ -14,7 +14,7 @@ namespace PrintDataFromDLL
         static void Main(string[] args)
         {
             var transponderDataReceiver = TransponderReceiverFactory.CreateTransponderDataReceiver();
-            transponderDataReceiver.TransponderDataReady += new EventHandler<RawTransponderDataEventArgs>(OnTransponderDataReady);
+            transponderDataReceiver.TransponderDataReady += OnTransponderDataReady;
 
             for (;;)
             {
@@ -23,7 +23,6 @@ namespace PrintDataFromDLL
 
         public static void OnTransponderDataReady(object sender, RawTransponderDataEventArgs e)
         {
-           // Console.WriteLine(e.TransponderData.Count);
             foreach (var data in e.TransponderData)
             {
                 var words = TransponderParsing.TransponderParser(data);
