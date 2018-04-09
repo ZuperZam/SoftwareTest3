@@ -1,0 +1,10 @@
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\ATMClasses.dll
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\ATMClasses.pdb
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.csprojResolveAssemblyReference.cache
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.csproj.CoreCompileInputs.cache
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.dll
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.pdb
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\nunit.framework.dll
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\nunit.framework.pdb
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\nunit.framework.xml
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\TransponderReceiver.dll

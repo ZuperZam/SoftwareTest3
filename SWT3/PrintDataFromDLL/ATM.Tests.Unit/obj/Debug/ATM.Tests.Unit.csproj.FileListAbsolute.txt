@@ -1,0 +1,11 @@
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\ATM.Tests.Unit.dll
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\ATM.Tests.Unit.pdb
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\nunit.framework.dll
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\nunit.framework.pdb
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\nunit.framework.xml
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\obj\Debug\ATM.Tests.Unit.csprojResolveAssemblyReference.cache
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\obj\Debug\ATM.Tests.Unit.csproj.CoreCompileInputs.cache
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\obj\Debug\ATM.Tests.Unit.dll
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\obj\Debug\ATM.Tests.Unit.pdb
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\ATMClasses.dll
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\ATMClasses.pdb
