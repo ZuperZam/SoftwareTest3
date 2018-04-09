@@ -102,10 +102,10 @@ namespace ATM.Tests.Unit
         }
 
         [Test]
-        public void AltitudeOutsideLowerBoundary_ReturnsTrue()
+        public void AltitudeOutsideLowerBoundary_ReturnsFalse()
         {
             trackData[3] = (MinAltitude-1).ToString();
-            Assert.That(TrackingValidation.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(true));
+            Assert.That(TrackingValidation.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(false));
         }
     }
 }
