@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using ATMClasses;
 using NUnit.Framework;
 
 namespace ATM.Tests.Unit
 {
+    [TestFixture]
     class TransponderparsingTest
     {
         private List<string> testList = new List<string>();
