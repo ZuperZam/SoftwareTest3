@@ -37,29 +37,13 @@ namespace ATM.Tests.Unit
         }
 
         [Test]
-        public void AreList()
+        public void AreNotEqualList()
         {
             string test = "MAR123;39045;12932;14000;20151006213456789";
 
             Assert.AreNotEqual(TransponderParsing.TransponderParser(test), (testList));
         }
 
-        [Test]
-        public void IsYCorrect()
-        {
-            
-        }
-
-        [Test]
-        public void IsAltitudeCorrect()
-        {
-            
-        }
-
-        [Test]
-        public void IsTimestampCorrect()
-        {
-            
-        }
+      
     }
 }
