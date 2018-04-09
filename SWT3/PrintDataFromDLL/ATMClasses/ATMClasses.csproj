@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DateFormatter.cs" />
+    <Compile Include="Interfaces.cs" />
     <Compile Include="Print.cs" />
     <Compile Include="TrackingValidation.cs" />
     <Compile Include="TrackObject.cs" />
