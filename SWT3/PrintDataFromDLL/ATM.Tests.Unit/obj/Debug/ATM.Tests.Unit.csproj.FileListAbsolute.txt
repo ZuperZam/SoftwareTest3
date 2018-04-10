@@ -9,3 +9,8 @@ D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\A
 D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\obj\Debug\ATM.Tests.Unit.pdb
 D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\ATMClasses.dll
 D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\ATMClasses.pdb
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\Castle.Core.dll
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\NSubstitute.dll
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\TransponderReceiver.dll
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\System.Threading.Tasks.Extensions.xml
