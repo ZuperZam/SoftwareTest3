@@ -29,7 +29,7 @@ namespace PrintDataFromDLL
             {
                 var words = TransponderParsing.TransponderParser(data); //Parse string (contains all track data)
 
-                words[4] = DateFormatter.FormatTimestamp(words[4]); //Replace timestamp with better formatted date
+                //words[4] = DateFormatter.FormatTimestamp(words[4]); //Replace timestamp with better formatted date
 
                 if (TrackingValidation.IsTrackInMonitoredAirspace(words))   //Only if plane is inside the Monitored area
                 {

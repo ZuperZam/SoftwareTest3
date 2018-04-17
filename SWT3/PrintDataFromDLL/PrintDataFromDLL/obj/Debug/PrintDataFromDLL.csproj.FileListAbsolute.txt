@@ -18,3 +18,20 @@ D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\P
 D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\PrintDataFromDLL\bin\Debug\nunit.framework.pdb
 D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\PrintDataFromDLL\bin\Debug\nunit.framework.xml
 D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\PrintDataFromDLL\bin\Debug\TransponderReceiver.dll
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\PrintDataFromDLL\bin\Debug\PrintDataFromDLL.exe.config
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\PrintDataFromDLL\bin\Debug\PrintDataFromDLL.exe
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\PrintDataFromDLL\bin\Debug\PrintDataFromDLL.pdb
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\PrintDataFromDLL\bin\Debug\ATMClasses.dll
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\PrintDataFromDLL\bin\Debug\nunit.framework.dll
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\PrintDataFromDLL\bin\Debug\TransponderReceiver.dll
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\PrintDataFromDLL\bin\Debug\ATMClasses.pdb
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\PrintDataFromDLL\bin\Debug\nunit.framework.pdb
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\PrintDataFromDLL\bin\Debug\nunit.framework.xml
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\PrintDataFromDLL\obj\Debug\PrintDataFromDLL.csprojResolveAssemblyReference.cache
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\PrintDataFromDLL\obj\Debug\PrintDataFromDLL.csproj.CoreCompileInputs.cache
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\PrintDataFromDLL\obj\Debug\PrintDataFromDLL.exe
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\PrintDataFromDLL\obj\Debug\PrintDataFromDLL.pdb
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\PrintDataFromDLL\bin\Debug\Castle.Core.dll
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\PrintDataFromDLL\bin\Debug\NSubstitute.dll
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\PrintDataFromDLL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\PrintDataFromDLL\bin\Debug\System.Threading.Tasks.Extensions.xml
