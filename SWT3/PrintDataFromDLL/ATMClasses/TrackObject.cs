@@ -12,6 +12,8 @@ namespace ATMClasses
         public int XCoord { get; set; }
         public int YCoord { get; set; }
         public int Altitude { get; set; }
+        public int Velocity { get; set; }
+        public int Course { get; set; }
         public DateTime Timestamp { get; set; }
         public string PrettyTimeStamp { get; set; }
 
@@ -24,8 +26,16 @@ namespace ATMClasses
             Timestamp = DateTime.ParseExact(trackInfo[4], "yyyyMMddHHmmssfff",
                 System.Globalization.CultureInfo.InvariantCulture);
             PrettyTimeStamp = DateFormatter.FormatTimestamp(trackInfo[4]);
+
+            Velocity = 0;
+            Course = 0;
         }
 
-
+        //We might use this later
+        //public override string ToString()
+        //{
+        //    var str = $"";
+        //    return str;
+        //}
     }
 }
