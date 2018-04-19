@@ -17,7 +17,8 @@ namespace ATMClasses
                 {
                     if (curr.Tag == prev.Tag)
                     {
-                        return (Math.Atan2((curr.YCoord - prev.YCoord), (curr.XCoord - prev.XCoord))) * (180 / Math.PI);
+                        curr.Course = (Math.Atan2((curr.YCoord - prev.YCoord), (curr.XCoord - prev.XCoord))) * (180 / Math.PI);
+                        break;
                     }
                 }
             }
