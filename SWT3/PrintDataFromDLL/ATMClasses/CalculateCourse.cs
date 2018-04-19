@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Math;
 
 namespace ATMClasses
 {
@@ -16,7 +17,7 @@ namespace ATMClasses
                 {
                     if (curr.Tag == prev.Tag)
                     {
-                        return ((curr.XCoordinate - prev.XCoordinate) ^ 2 + (curr.YCoordinate - prev.YCoordinate) ^ 2);
+                        return (Math.Atan2((curr.YCoord - prev.YCoord), (curr.XCoord - prev.XCoord))) * (180 / Math.PI);
                     }
                 }
             }

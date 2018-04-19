@@ -16,7 +16,7 @@ namespace ATMClasses
                 {
                     if (curr.Tag == prev.Tag)
                     {
-                        return ((curr.XCoordinate - prev.XCoordinate) ^ 2 + (curr.YCoordinate - prev.YCoordinate) ^ 2) / (curr.Timestamp.Subtract(prev.Timestamp));
+                        return ((curr.XCoord - prev.XCoord) ^ 2 + (curr.YCoord - prev.YCoord) ^ 2) / (curr.Timestamp.Subtract(prev.Timestamp));
                     }
                 }
             }
