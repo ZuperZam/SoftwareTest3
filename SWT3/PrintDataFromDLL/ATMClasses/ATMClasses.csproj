@@ -59,13 +59,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculateCourse.cs" />
     <Compile Include="DateFormatter.cs" />
     <Compile Include="Interfaces.cs" />
     <Compile Include="Print.cs" />
+    <Compile Include="System.cs" />
     <Compile Include="TrackingValidation.cs" />
     <Compile Include="TrackObject.cs" />
     <Compile Include="TransponderParsing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CalculateVelocity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
