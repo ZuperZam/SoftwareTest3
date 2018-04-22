@@ -8,6 +8,7 @@ namespace ATMClasses
 {
     class VelocityCourseCalculater
     {
+        //Returns course in whole degrees. North is 0
         public int CalculateCourse(TrackObject oldTO, TrackObject newTO)
         {
             // angle in degrees
@@ -21,19 +22,22 @@ namespace ATMClasses
             return (int)angleDeg;
         }
 
+        //Returns velocity in whole meters per second
         public int CalculateVelocity(TrackObject oldTO, TrackObject newTO)
         {
             TimeSpan timeDiff = newTO.Timestamp - oldTO.Timestamp;
             double dist = CalculateDistance2D(oldTO.XCoord, newTO.XCoord, oldTO.YCoord, newTO.YCoord);
 
-            return (int)(dist / (timeDiff.Milliseconds * 1000));
+            return (int)(dist / (timeDiff.Milliseconds * 1000));    //This will give dist m / timeDiff s
         }
 
+        //Returns one dimensional distance
         private int CalculateDistance1D(int x1, int x2)
         {
             return Math.Abs(x1 - x2);
         }
 
+        //Returns two dimensional distance
         private double CalculateDistance2D(int x1, int x2, int y1, int y2)
         {
             Int64 xDist = CalculateDistance1D(x1, x2);
