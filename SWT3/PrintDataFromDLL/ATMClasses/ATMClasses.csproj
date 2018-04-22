@@ -59,6 +59,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Distance.cs" />
+    <Compile Include="IDistance.cs" />
     <Compile Include="VelocityCourseCalculater.cs" />
     <Compile Include="DateFormatter.cs" />
     <Compile Include="Interfaces.cs" />
