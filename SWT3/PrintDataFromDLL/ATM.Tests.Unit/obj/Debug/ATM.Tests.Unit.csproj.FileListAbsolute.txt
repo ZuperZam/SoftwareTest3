@@ -33,3 +33,6 @@ C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromD
 C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\PrintDataFromDLL.exe
 C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\PrintDataFromDLL.pdb
 C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\PrintDataFromDLL.exe.config
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\PrintDataFromDLL.exe
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\PrintDataFromDLL.pdb
+D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\PrintDataFromDLL.exe.config

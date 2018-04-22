@@ -60,12 +60,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Distance.cs" />
-    <Compile Include="IDistance.cs" />
-    <Compile Include="ISeparationChecker.cs" />
+    <Compile Include="Interfaces\IDistance.cs" />
+    <Compile Include="Interfaces\ISeparationChecker.cs" />
     <Compile Include="SeparationChecker.cs" />
     <Compile Include="VelocityCourseCalculater.cs" />
     <Compile Include="DateFormatter.cs" />
-    <Compile Include="Interfaces.cs" />
     <Compile Include="Print.cs" />
     <Compile Include="TrackingValidation.cs" />
     <Compile Include="TrackObject.cs" />
