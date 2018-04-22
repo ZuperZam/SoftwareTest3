@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="VelocityCourseCalculater.cs" />
     <Compile Include="DateFormatter.cs" />
     <Compile Include="Interfaces.cs" />
     <Compile Include="Print.cs" />
