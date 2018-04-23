@@ -34,11 +34,14 @@ namespace ATMClasses
             Course = 0;
         }
 
-        //We might use this later
-        //public override string ToString()
-        //{
-        //    var str = $"";
-        //    return str;
-        //}
+        public override string ToString()
+        {
+            var str = $"Tag:\t\t" + Tag + "\n" +
+                      "X coordinate:\t" + XCoord + " meters\n" +
+                      "Y coordinate:\t" + YCoord + " meters\n" +
+                      "Altitude:\t" + Altitude + " meters\n" +
+                      "Timestamp:\t" + PrettyTimeStamp;
+            return str;
+        }
     }
 }
