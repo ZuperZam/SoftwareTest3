@@ -91,5 +91,19 @@ namespace ATM.Tests.Unit
         {
             Assert.AreEqual(_prettyTimestamp, _uut.PrettyTimeStamp);
         }
+
+        [Test]
+        public void Track_GetToString_ReturnsExpectedString()
+        {
+            string expectedString = "Tag:\t\t" + _tag + "\n" +
+                                    "X coordinate:\t" + _xCoord + " meters\n" +
+                                    "Y coordinate:\t" + _yCoord + " meters\n" +
+                                    "Altitude:\t" + _altitude + " meters\n" +
+                                    "Timestamp:\t" + _prettyTimestamp +
+                                    "Velocity:\t" + _velocity + " m/s\n" +
+                                    "Course:\t" + _course + " degrees";
+
+            Assert.AreEqual(_uut.ToString(), expectedString);
+        }
     }
 }

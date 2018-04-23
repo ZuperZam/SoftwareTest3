@@ -36,11 +36,13 @@ namespace ATMClasses
 
         public override string ToString()
         {
-            var str = $"Tag:\t\t" + Tag + "\n" +
+            var str = "Tag:\t\t" + Tag + "\n" +
                       "X coordinate:\t" + XCoord + " meters\n" +
                       "Y coordinate:\t" + YCoord + " meters\n" +
                       "Altitude:\t" + Altitude + " meters\n" +
-                      "Timestamp:\t" + PrettyTimeStamp;
+                      "Timestamp:\t" + PrettyTimeStamp +
+                      "Velocity:\t" + Velocity + " m/s\n" +
+                      "Course:\t" + Course + " degrees";
             return str;
         }
     }
