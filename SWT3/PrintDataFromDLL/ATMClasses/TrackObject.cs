@@ -28,8 +28,6 @@ namespace ATMClasses
             Altitude = int.Parse(trackInfo[3]);
             Timestamp = DateTime.ParseExact(trackInfo[4], "yyyyMMddHHmmssfff",
                 System.Globalization.CultureInfo.InvariantCulture);
-            PrettyTimeStamp = dateFormatter.FormatTimestamp(trackInfo[4]);
-
             Velocity = 0;
             Course = 0;
         }
