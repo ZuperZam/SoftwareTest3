@@ -12,11 +12,7 @@ namespace ATMClasses
     {
         public void printTrack(TrackObject track)
         {
-            Console.WriteLine("Tag:\t\t" + track.Tag);
-            Console.WriteLine("X coordinate:\t" + track.XCoord + " meters");
-            Console.WriteLine("Y coordinate:\t" + track.YCoord + " meters");
-            Console.WriteLine("Altitude:\t" + track.Altitude + " meters");
-            Console.WriteLine("Timestamp:\t" + track.PrettyTimeStamp);
+            Console.WriteLine(track.ToString());
             Console.WriteLine();
         }
     }
