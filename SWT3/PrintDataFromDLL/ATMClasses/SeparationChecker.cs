@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ATMClasses
 {
-    class SeparationChecker : ISeparationChecker
+    public class SeparationChecker : ISeparationChecker
     {
         private IDistance dist;
         private int verticalSeparation = 300;

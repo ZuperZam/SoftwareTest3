@@ -22,8 +22,8 @@ namespace ATM.Tests.Unit
         [SetUp]
         public void Setup()
         {
-            _uut = new VelocityCourseCalculater(distance);
             distance = new Distance();
+            _uut = new VelocityCourseCalculater(distance);
             list1 = new List<string> { "MAR123", "50000", "50000", "1000", "20151006213456789" };
             list2 = new List<string> { "MAR123", "50000", "50000", "1000", "20151006213456789" };
             trackobject1 = new TrackObject(list1);
@@ -52,6 +52,27 @@ namespace ATM.Tests.Unit
             Assert.That(_uut.CalculateCourse(trackobject1, trackobject2), Is.EqualTo(result));
         }
 
-        public void IsVelocityCorrect
+        [TestCase(5000, 5000, 5000, 5100, "20151006213456000", "20151006213457000", 100)]
+        [TestCase(5000, 5000, 5000, 5100, "20151006213456000", "20151006213456500", 200)]
+        [TestCase(5000, 5000, 5000, 5100, "20151006213456000", "20151006213456001", 100000)]
+        [TestCase(5000, 5000, 5000, 5100, "20151006213456000", "20151006213456001", 100000)]
+        [TestCase(5000, 5100, 5000, 5100, "20151006213456000", "20151006213457000", 141)]
+        [TestCase(5000, 5100, 5000, 5100, "20151006213456000", "20151006213456500", 282)]
+        [TestCase(5100, 5000, 5100, 5000, "20151006213456000", "20151006213457000", 141)]
+        [TestCase(5100, 5000, 5100, 5000, "20151006213456000", "20151006213456500", 282)]
+        public void IsVelocityCorrect(int x1, int x2, int y1, int y2, string timestamp1, string timestamp2, int result)
+        {
+            trackobject1.XCoord = x1;
+            trackobject1.YCoord = y1;
+            trackobject2.XCoord = x2;
+            trackobject2.YCoord = y2;
+
+            trackobject1.Timestamp = DateTime.ParseExact(timestamp1, "yyyyMMddHHmmssfff",
+                System.Globalization.CultureInfo.InvariantCulture);
+            trackobject2.Timestamp = DateTime.ParseExact(timestamp2, "yyyyMMddHHmmssfff",
+                System.Globalization.CultureInfo.InvariantCulture);
+
+            Assert.That(_uut.CalculateVelocity(trackobject1, trackobject2), Is.EqualTo(result));
+        }
     }
 }

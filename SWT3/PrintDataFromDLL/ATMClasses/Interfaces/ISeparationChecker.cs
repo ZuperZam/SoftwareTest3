@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ATMClasses
 {
-    interface ISeparationChecker
+    public interface ISeparationChecker
     {
         bool IsInOtherAirSpace(TrackObject TO1, TrackObject TO2);
     }

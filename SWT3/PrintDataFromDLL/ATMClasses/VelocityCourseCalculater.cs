@@ -31,12 +31,12 @@ namespace ATMClasses
         }
 
         //Returns velocity in whole meters per second
-        public int CalculateVelocity(TrackObject oldTO, TrackObject newTO)
+        public Int64 CalculateVelocity(TrackObject oldTO, TrackObject newTO)
         {
             TimeSpan timeDiff = newTO.Timestamp - oldTO.Timestamp;
             double dist = this.dist.CalculateDistance2D(oldTO.XCoord, newTO.XCoord, oldTO.YCoord, newTO.YCoord);
 
-            return (int)(dist / (timeDiff.Milliseconds * 1000));    //This will give dist m / timeDiff s
+            return (Int64)(dist / (timeDiff.TotalMilliseconds / 1000));    //This will give dist m / timeDiff s
         }
     }
 }

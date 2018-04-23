@@ -14,7 +14,7 @@ namespace ATMClasses.Interfaces
         
 
         //Returns velocity in whole meters per second
-        int CalculateVelocity(TrackObject oldTO, TrackObject newTO);
+        Int64 CalculateVelocity(TrackObject oldTO, TrackObject newTO);
 
     }
 }
