@@ -4,12 +4,13 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using ATMClasses.Interfaces;
 
 namespace ATMClasses
 {
-    public class Print
+    public class Print : IPrint
     {
-        public static void printTrack(TrackObject track)
+        public void printTrack(TrackObject track)
         {
             Console.WriteLine("Tag:\t\t" + track.Tag);
             Console.WriteLine("X coordinate:\t" + track.XCoord + " meters");

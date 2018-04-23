@@ -4,12 +4,13 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ATMClasses.Interfaces;
 
 namespace ATMClasses
 {
-    public class DateFormatter
+    public class DateFormatter : IDateFormatter
     {
-        public static string FormatTimestamp(string timestamp)
+        public string FormatTimestamp(string timestamp)
         {
             string format = "yyyyMMddHHmmssfff";    //Set input format
             DateTime date = DateTime.ParseExact(timestamp, format, CultureInfo.CreateSpecificCulture("en-US"));
@@ -18,7 +19,7 @@ namespace ATMClasses
             return dateformat;
         }
 
-        private static string GetDaySuffix(DateTime timeStamp)
+        public string GetDaySuffix(DateTime timeStamp)
         {
             //returns "st", "nd", "rd" or "th"
             return (timeStamp.Day % 10 == 1 && timeStamp.Day != 11) ? "st"

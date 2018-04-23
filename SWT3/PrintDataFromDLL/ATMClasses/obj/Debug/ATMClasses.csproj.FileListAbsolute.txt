@@ -15,7 +15,6 @@ C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromD
 C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\TransponderReceiver.dll
 C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\nunit.framework.pdb
 C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\nunit.framework.xml
-C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.csprojResolveAssemblyReference.cache
 C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.csproj.CoreCompileInputs.cache
 C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.dll
 C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.pdb
@@ -26,3 +25,4 @@ D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\A
 D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\NSubstitute.dll
 D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\System.Threading.Tasks.Extensions.dll
 D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.csprojResolveAssemblyReference.cache

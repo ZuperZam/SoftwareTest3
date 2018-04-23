@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ATMClasses;
+using ATMClasses.Interfaces;
 using NUnit.Framework;
 
 namespace ATM.Tests.Unit
@@ -8,10 +9,11 @@ namespace ATM.Tests.Unit
     [TestFixture]
     public class DateFormatterTest
     {
+        IDateFormatter _uut;
         [SetUp]
         public void Setup()
         {
-
+            _uut = new DateFormatter();
         }
 
         //Tests a good variety of suffixes. Tests 1-3, 11-13, 21-23, 31. All with boundaries as well
@@ -36,7 +38,7 @@ namespace ATM.Tests.Unit
             string shortDayNumber = string.Format("{0}", int.Parse(dayNumber));  //removes '0' from low daynumbers
             string expectedTimestamp = $"October {shortDayNumber}{expectedSuffix}, 2015, at 21:34:56 and 789 milliseconds";
 
-            Assert.AreEqual(expectedTimestamp, DateFormatter.FormatTimestamp($"201510{dayNumber}213456789"));
+            Assert.AreEqual(expectedTimestamp, _uut.FormatTimestamp($"201510{dayNumber}213456789"));
         }
 
         [TestCase("01", "January")]
@@ -55,7 +57,7 @@ namespace ATM.Tests.Unit
         {
             string expectedTimestamp = $"{expectedMonthName} 1st, 2015, at 21:34:56 and 789 milliseconds";
 
-            Assert.AreEqual(expectedTimestamp, DateFormatter.FormatTimestamp($"2015{monthNumber}01213456789"));
+            Assert.AreEqual(expectedTimestamp, _uut.FormatTimestamp($"2015{monthNumber}01213456789"));
         }
     }
 }

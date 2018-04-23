@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ATMClasses
 {
-    class Distance : IDistance
+    public class Distance : IDistance
     {
         //Returns one dimensional distance
         public int CalculateDistance1D(int x1, int x2)

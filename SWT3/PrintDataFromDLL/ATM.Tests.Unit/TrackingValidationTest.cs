@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ATMClasses;
+using ATMClasses.Interfaces;
 using NUnit.Framework;
 
 namespace ATM.Tests.Unit
@@ -13,9 +14,11 @@ namespace ATM.Tests.Unit
         private const int MinAltitude = 500;
         private const int MaxAltitude = 20000;
         List<string> trackData;
+        ITrackingValidation _uut;
         [SetUp]
         public void Setup()
         {
+            _uut = new TrackingValidation();
             trackData = new List<string>{"ATR423", "50000", "50000", "1000", "20151006213456789" };
         }
 
@@ -24,28 +27,28 @@ namespace ATM.Tests.Unit
         public void XCoordinateInsideUpperBoundary_ReturnsTrue()
         {
             trackData[1] = MaxCoord.ToString();
-            Assert.That(TrackingValidation.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(true));
+            Assert.That(_uut.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(true));
         }
 
         [Test]
         public void XCoordinateOutsideUpperBoundary_ReturnsFalse()
         {
             trackData[1] = (MaxCoord+1).ToString();
-            Assert.That(TrackingValidation.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(false));
+            Assert.That(_uut.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(false));
         }
 
         [Test]
         public void XCoordinateInsideLowerBoundary_ReturnsTrue()
         {
             trackData[1] = MinCoord.ToString();
-            Assert.That(TrackingValidation.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(true));
+            Assert.That(_uut.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(true));
         }
 
         [Test]
         public void XCoordinateOutsideLowerBoundary_ReturnsFalse()
         {
             trackData[1] = (MinCoord-1).ToString();
-            Assert.That(TrackingValidation.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(false));
+            Assert.That(_uut.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(false));
         }
 
 
@@ -54,28 +57,28 @@ namespace ATM.Tests.Unit
         public void YCoordinateInsideUpperBoundary_ReturnsTrue()
         {
             trackData[2] = MaxCoord.ToString();
-            Assert.That(TrackingValidation.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(true));
+            Assert.That(_uut.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(true));
         }
 
         [Test]
         public void YCoordinateOutsideUpperBoundary_ReturnsFalse()
         {
             trackData[2] = (MaxCoord + 1).ToString();
-            Assert.That(TrackingValidation.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(false));
+            Assert.That(_uut.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(false));
         }
 
         [Test]
         public void YCoordinateInsideLowerBoundary_ReturnsTrue()
         {
             trackData[2] = MinCoord.ToString();
-            Assert.That(TrackingValidation.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(true));
+            Assert.That(_uut.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(true));
         }
 
         [Test]
         public void YCoordinateOutsideLowerBoundary_ReturnsFalse()
         {
             trackData[2] = (MinCoord - 1).ToString();
-            Assert.That(TrackingValidation.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(false));
+            Assert.That(_uut.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(false));
         }
 
 
@@ -84,28 +87,28 @@ namespace ATM.Tests.Unit
         public void AltitudeInsideUpperBoundary_ReturnsTrue()
         {
             trackData[3] = MaxAltitude.ToString();
-            Assert.That(TrackingValidation.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(true));
+            Assert.That(_uut.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(true));
         }
 
         [Test]
         public void AltitudeOutsideUpperBoundary_ReturnsFalse()
         {
             trackData[3] = (MaxAltitude + 1).ToString();
-            Assert.That(TrackingValidation.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(false));
+            Assert.That(_uut.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(false));
         }
 
         [Test]
         public void AltitudeInsideLowerBoundary_ReturnsTrue()
         {
             trackData[3] = MinAltitude.ToString();
-            Assert.That(TrackingValidation.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(true));
+            Assert.That(_uut.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(true));
         }
 
         [Test]
         public void AltitudeOutsideLowerBoundary_ReturnsFalse()
         {
             trackData[3] = (MinAltitude-1).ToString();
-            Assert.That(TrackingValidation.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(false));
+            Assert.That(_uut.IsTrackInMonitoredAirspace(trackData), Is.EqualTo(false));
         }
     }
 }

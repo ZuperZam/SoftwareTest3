@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ATMClasses.Interfaces;
 
 namespace ATMClasses
 {
-    public class TransponderParsing
+    public class TransponderParsing : ITransponderParsing
     {
-        public static List<string> TransponderParser(string transponderData)
+        public List<string> TransponderParser(string transponderData)
         {
             List<string> transponderParts = transponderData.Split(';').ToList();
             return transponderParts;

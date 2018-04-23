@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ATMClasses.Interfaces;
 
 namespace ATMClasses
 {
@@ -17,6 +18,8 @@ namespace ATMClasses
         public DateTime Timestamp { get; set; }
         public string PrettyTimeStamp { get; set; }
 
+        public IDateFormatter dateFormatter = new DateFormatter();
+
         public TrackObject(List<string> trackInfo)
         {
             Tag = trackInfo[0];
@@ -25,7 +28,7 @@ namespace ATMClasses
             Altitude = int.Parse(trackInfo[3]);
             Timestamp = DateTime.ParseExact(trackInfo[4], "yyyyMMddHHmmssfff",
                 System.Globalization.CultureInfo.InvariantCulture);
-            PrettyTimeStamp = DateFormatter.FormatTimestamp(trackInfo[4]);
+            PrettyTimeStamp = dateFormatter.FormatTimestamp(trackInfo[4]);
 
             Velocity = 0;
             Course = 0;

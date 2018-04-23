@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ATMClasses.Interfaces;
 
 namespace ATMClasses
 {
-    class VelocityCourseCalculater
+    public class VelocityCourseCalculater : IVelocityCourseCalculator
     {
         private IDistance dist;
 
