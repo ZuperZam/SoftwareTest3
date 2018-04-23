@@ -99,7 +99,7 @@ namespace ATM.Tests.Unit
                                     "X coordinate:\t" + _xCoord + " meters\n" +
                                     "Y coordinate:\t" + _yCoord + " meters\n" +
                                     "Altitude:\t" + _altitude + " meters\n" +
-                                    "Timestamp:\t" + _prettyTimestamp +
+                                    "Timestamp:\t" + _prettyTimestamp + "\n" +
                                     "Velocity:\t" + _velocity + " m/s\n" +
                                     "Course:\t" + _course + " degrees";
 
