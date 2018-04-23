@@ -67,6 +67,7 @@
     <Compile Include="Interfaces\ITrackingValidation.cs" />
     <Compile Include="Interfaces\ITransponderParsing.cs" />
     <Compile Include="Interfaces\IVelocityCourseCalculator.cs" />
+    <Compile Include="Objectifier.cs" />
     <Compile Include="SeparationChecker.cs" />
     <Compile Include="VelocityCourseCalculater.cs" />
     <Compile Include="DateFormatter.cs" />
