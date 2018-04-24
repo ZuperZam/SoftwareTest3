@@ -12,8 +12,6 @@ namespace PrintDataFromDLL
 {
     class Program
     {
-        public ATMSystem atmSystem;
-
         static void Main(string[] args)
         {
             var transponderDataReceiver = TransponderReceiverFactory.CreateTransponderDataReceiver();
@@ -21,7 +19,7 @@ namespace PrintDataFromDLL
 
             ITrackListEvent objectifier = new Objectifier(transponderDataReceiver, new TrackingValidation(), new TransponderParsing(), new DateFormatter());
 
-            var atmSystem = new ATMSystem(objectifier, new TrackUpdater(new VelocityCourseCalculater(new Distance())), new VelocityCourseCalculater(new Distance()));
+            var atmSystem = new ATMSystem(objectifier, new TrackUpdater(new VelocityCourseCalculater(new Distance())), new VelocityCourseCalculater(new Distance()), new SeparationChecker(new Distance()));
 
             System.Console.ReadLine();
 
