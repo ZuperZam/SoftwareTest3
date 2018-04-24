@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using ATMClasses;
 using ATMClasses.Interfaces;
+using NSubstitute;
 
 namespace ATM.Tests.Unit
 {
@@ -27,10 +28,24 @@ namespace ATM.Tests.Unit
         public void Setup()
         {
             distance = new Distance();
-            
-            velocityCourseCalculator = new VelocityCourseCalculater(distance);
+
+            velocityCourseCalculator = Substitute.For<IVelocityCourseCalculator>();
             _uut = new TrackUpdater(velocityCourseCalculator);
             
+        }
+
+        [Test]
+        public void IsCalculateCourseCalled()
+        {
+            list1 = new List<string> { "MAR123", "50000", "50000", "1000", "20151006213456789" };
+            list2 = new List<string> { "MAR123", "50000", "50000", "1000", "20151006213456789" };
+            trackObject1 = new TrackObject(list1);
+            trackObject2 = new TrackObject(list2);
+            newList = new List<TrackObject> {trackObject1};
+            oldList = new List<TrackObject> {trackObject2};
+            _uut.updateTracks(newList, oldList);
+
+            velocityCourseCalculator.Received().CalculateCourse(trackObject2, trackObject1);
         }
 
         [Test]
@@ -42,9 +57,11 @@ namespace ATM.Tests.Unit
             trackObject2 = new TrackObject(list2);
             newList = new List<TrackObject> {trackObject1};
             oldList = new List<TrackObject> {trackObject2};
-            //_uut.updateTracks(ref newList, oldList);
+            _uut.updateTracks(newList, oldList);
 
-            //Assert.That();
+            velocityCourseCalculator.Received().CalculateVelocity(trackObject2, trackObject1);
         }
+
+       
     }
 }
