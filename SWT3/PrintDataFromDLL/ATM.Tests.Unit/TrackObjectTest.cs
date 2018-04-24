@@ -101,7 +101,7 @@ namespace ATM.Tests.Unit
                                     "Altitude:\t" + _altitude + " meters\n" +
                                     "Timestamp:\t" + _prettyTimestamp + "\n" +
                                     "Velocity:\t" + _velocity + " m/s\n" +
-                                    "Course:\t" + _course + " degrees";
+                                    "Course:\t\t" + _course + " degrees";
 
             Assert.AreEqual(_uut.ToString(), expectedString);
         }
