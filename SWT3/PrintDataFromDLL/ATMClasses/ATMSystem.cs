@@ -17,6 +17,7 @@ namespace ATMClasses
         private ISeparationChecker _separationChecker;
         private IPrint _print;
 
+
         public ATMSystem(
             ITrackListEvent trackListEvent,
             ITrackUpdater trackUpdater,
@@ -32,7 +33,7 @@ namespace ATMClasses
             _print = print;
         }
 
-        private void OnTrackListReady(object sender, TrackListEventArgs e)
+        public void OnTrackListReady(object sender, TrackListEventArgs e)
         {
             _newTrackObjects = e.TrackObjects;
             _newTrackObjects = _trackUpdater.updateTracks(_newTrackObjects, _oldTrackObjects);

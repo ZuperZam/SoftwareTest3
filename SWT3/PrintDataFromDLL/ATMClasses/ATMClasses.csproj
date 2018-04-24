@@ -63,6 +63,7 @@
     <Compile Include="Distance.cs" />
     <Compile Include="Interfaces\IDateFormatter.cs" />
     <Compile Include="Interfaces\IDistance.cs" />
+    <Compile Include="Interfaces\IObjectifier.cs" />
     <Compile Include="Interfaces\IPrint.cs" />
     <Compile Include="Interfaces\ISeparationChecker.cs" />
     <Compile Include="Interfaces\ITrackingValidation.cs" />

@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ATMSystemTest.cs" />
     <Compile Include="DateFormatterTest.cs" />
     <Compile Include="DistanceTest.cs" />
     <Compile Include="ObjectifierTest.cs" />
