@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using ATMClasses;
@@ -17,32 +18,20 @@ namespace PrintDataFromDLL
             var transponderDataReceiver = TransponderReceiverFactory.CreateTransponderDataReceiver();
             transponderDataReceiver.TransponderDataReady += OnTransponderDataReady;
 
-            ITrackListEvent objectifier = new Objectifier(transponderDataReceiver, new TrackingValidation(), new TransponderParsing(), new DateFormatter());
+            var trackingValidation = new TrackingValidation();
+            var transponderParsing = new TransponderParsing();
+            var dateFormatter = new DateFormatter();
 
-            var atmSystem = new ATMSystem(objectifier, new TrackUpdater(new VelocityCourseCalculater(new Distance())), new VelocityCourseCalculater(new Distance()), new SeparationChecker(new Distance()));
+            var distance = new Distance();
+            var velocityCourseCalculator =  new VelocityCourseCalculater(distance);
+            var trackUpdater = new TrackUpdater(velocityCourseCalculator);
+            var separationChecker = new SeparationChecker(distance);
+
+            ITrackListEvent objectifier = new Objectifier(transponderDataReceiver, trackingValidation, transponderParsing, dateFormatter);
+
+            var atmSystem = new ATMSystem(objectifier, trackUpdater, velocityCourseCalculator, separationChecker);
 
             System.Console.ReadLine();
-
-            //for (;;)
-            //{
-            ////    ITransponderParsing TP = new TransponderParsing();
-            ////ITrackingValidation TV = new TrackingValidation();
-            ////IPrint P = new Print();
-            ////Console.Clear();    //Clear old tracks
-
-            //    //foreach (var data in e.TransponderData) //foreach string in the stringlist
-            //    //{
-            //    //    var words = TP.TransponderParser(data); //Parse string (contains all track data)
-
-            //    //    words[4] = DateFormatter.FormatTimestamp(words[4]); //Replace timestamp with better formatted date
-
-            //    //    if (TV.IsTrackInMonitoredAirspace(words))   //Only if plane is inside the Monitored area
-            //    //    {
-            //    //        var track = new TrackObject(words); //Make new trackObject
-            //    //        P.printTrack(track);    //print track data
-            //    //    }
-            //    //}
-            //}
         }
 
         public static void OnTransponderDataReady(object sender, RawTransponderDataEventArgs e)

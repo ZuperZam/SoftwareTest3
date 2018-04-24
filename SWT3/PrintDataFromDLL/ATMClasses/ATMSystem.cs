@@ -32,7 +32,7 @@ namespace ATMClasses
         private void OnTrackListReady(object sender, TrackListEventArgs e)
         {
             _newTrackObjects = e.TrackObjects;
-            _trackUpdater.updateTracks(ref _newTrackObjects, _oldTrackObjects);
+            _newTrackObjects = _trackUpdater.updateTracks(_newTrackObjects, _oldTrackObjects);
 
             _oldTrackObjects.Clear();
 

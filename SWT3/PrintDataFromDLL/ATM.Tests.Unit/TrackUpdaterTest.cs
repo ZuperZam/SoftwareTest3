@@ -44,7 +44,7 @@ namespace ATM.Tests.Unit
             oldList = new List<TrackObject> {trackObject2};
             //_uut.updateTracks(ref newList, oldList);
 
-            Assert.That();
+            //Assert.That();
         }
     }
 }
