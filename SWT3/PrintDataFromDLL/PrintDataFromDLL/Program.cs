@@ -26,10 +26,11 @@ namespace PrintDataFromDLL
             var velocityCourseCalculator =  new VelocityCourseCalculater(distance);
             var trackUpdater = new TrackUpdater(velocityCourseCalculator);
             var separationChecker = new SeparationChecker(distance);
+            var print = new Print();
 
             ITrackListEvent objectifier = new Objectifier(transponderDataReceiver, trackingValidation, transponderParsing, dateFormatter);
 
-            var atmSystem = new ATMSystem(objectifier, trackUpdater, velocityCourseCalculator, separationChecker);
+            var atmSystem = new ATMSystem(objectifier, trackUpdater, velocityCourseCalculator, separationChecker, print);
 
             System.Console.ReadLine();
         }

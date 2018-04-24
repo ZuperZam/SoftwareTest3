@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,17 @@ namespace ATMClasses
             int verticalDistance = dist.CalculateDistance1D(TO1.Altitude, TO2.Altitude);
 
             return horizontalDistance < horizontalSeparation && verticalDistance < verticalSeparation;
+        }
+
+        public void LogSeparationEvent(TrackObject TO1, TrackObject TO2)
+        {
+            string output = "Timestamp: " + TO1.Timestamp + "\t" +
+                            TO1.Tag + " and " + TO2.Tag + " are breaking separation rules";
+
+            using (StreamWriter outputFile = new StreamWriter(@"SeparatationEventLog.txt", true))
+            {
+                outputFile.WriteLine(output);
+            }
         }
     }
 }

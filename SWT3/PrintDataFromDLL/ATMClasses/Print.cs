@@ -10,9 +10,15 @@ namespace ATMClasses
 {
     public class Print : IPrint
     {
-        public void printTrack(TrackObject track)
+        public void PrintTrack(TrackObject track)
         {
             Console.WriteLine(track.ToString());
+            Console.WriteLine();
+        }
+
+        public void PrintString(string outputString)
+        {
+            Console.WriteLine(outputString);
             Console.WriteLine();
         }
     }

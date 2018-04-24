@@ -15,18 +15,21 @@ namespace ATMClasses
         private ITrackUpdater _trackUpdater;
         private IVelocityCourseCalculator _velocityCourseCalculator;
         private ISeparationChecker _separationChecker;
+        private IPrint _print;
 
         public ATMSystem(
             ITrackListEvent trackListEvent,
             ITrackUpdater trackUpdater,
             IVelocityCourseCalculator velocityCourseCalculator,
-            ISeparationChecker separationChecker)
+            ISeparationChecker separationChecker,
+            IPrint print)
         {
             trackListEvent.TrackListReady += OnTrackListReady;
 
             _trackUpdater = trackUpdater;
             _velocityCourseCalculator = velocityCourseCalculator;
             _separationChecker = separationChecker;
+            _print = print;
         }
 
         private void OnTrackListReady(object sender, TrackListEventArgs e)
@@ -45,7 +48,7 @@ namespace ATMClasses
 
             foreach (var oldTrackObject in _oldTrackObjects)
             {
-                Console.WriteLine(oldTrackObject.ToString());
+                _print.PrintString(oldTrackObject.ToString());
             }
 
             for (int i = 0; i < _oldTrackObjects.Count - 1; i++)
@@ -54,8 +57,8 @@ namespace ATMClasses
                 {
                     if (_separationChecker.IsInOtherAirSpace(_oldTrackObjects[i], _oldTrackObjects[j]))
                     {
-                        Console.WriteLine();
-                        Console.WriteLine(_oldTrackObjects[i].Tag + " Colliding with: " + _oldTrackObjects[j].Tag);
+                        _print.PrintString(_oldTrackObjects[i].Tag + " and " + _oldTrackObjects[j].Tag + "are breaking separation rules!");
+                        _separationChecker.LogSeparationEvent(_oldTrackObjects[i], _oldTrackObjects[j]);
                     }
                 }
             }

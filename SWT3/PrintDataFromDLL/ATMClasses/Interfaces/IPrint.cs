@@ -8,6 +8,7 @@ namespace ATMClasses.Interfaces
 {
     public interface IPrint
     {
-        void printTrack(TrackObject track);
+        void PrintTrack(TrackObject track);
+        void PrintString(string outputString);
     }
 }

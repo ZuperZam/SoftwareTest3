@@ -9,5 +9,6 @@ namespace ATMClasses
     public interface ISeparationChecker
     {
         bool IsInOtherAirSpace(TrackObject TO1, TrackObject TO2);
+        void LogSeparationEvent(TrackObject TO1, TrackObject TO2);
     }
 }
