@@ -11,15 +11,18 @@ namespace ATMClasses
     public class TrackUpdater : ITrackUpdater
     {
         public IVelocityCourseCalculator _velocityCourseCalculator { get; }
+        private List<TrackObject> _trackObjects;
 
         public TrackUpdater(IVelocityCourseCalculator velocityCourseCalculator)
         {
             _velocityCourseCalculator = velocityCourseCalculator;
         }
 
-        public void updateTracks(ref List<TrackObject> newTrackObjects, List<TrackObject> oldTrackObjects)
+        public List<TrackObject> updateTracks(List<TrackObject> newTrackObjects, List<TrackObject> oldTrackObjects)
         {
-            foreach (var newTrackObject in newTrackObjects)
+            _trackObjects = newTrackObjects;
+
+            foreach (var newTrackObject in _trackObjects)
             {
                 foreach (var oldTrackObject in oldTrackObjects)
                 {
@@ -31,6 +34,8 @@ namespace ATMClasses
                     }
                 }
             }
+
+            return _trackObjects;
         }
     }
 }

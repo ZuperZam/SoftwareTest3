@@ -8,6 +8,6 @@ namespace ATMClasses.Interfaces
 {
     public interface ITrackUpdater
     {
-           void updateTracks(ref List<TrackObject> newTrackObjects, List<TrackObject> oldTrackObjects);
+           List<TrackObject> updateTracks(List<TrackObject> newTrackObjects, List<TrackObject> oldTrackObjects);
     }
 }
