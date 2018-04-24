@@ -8,7 +8,9 @@ namespace ATMClasses.Interfaces
 {
     public interface IVelocityCourseCalculator
     {
-       
+
+        IVelocityCourseCalculator _velocityCourseCalculator { get; }
+
         //Returns course in whole degrees. North is 0
         int CalculateCourse(TrackObject oldTO, TrackObject newTO);
         
