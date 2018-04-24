@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ATMSystem.cs" />
     <Compile Include="Distance.cs" />
     <Compile Include="Interfaces\IDateFormatter.cs" />
     <Compile Include="Interfaces\IDistance.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Interfaces\IVelocityCourseCalculator.cs" />
     <Compile Include="Objectifier.cs" />
     <Compile Include="SeparationChecker.cs" />
+    <Compile Include="TrackUpdater.cs" />
     <Compile Include="VelocityCourseCalculater.cs" />
     <Compile Include="DateFormatter.cs" />
     <Compile Include="Print.cs" />
