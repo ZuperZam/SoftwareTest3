@@ -8,7 +8,7 @@ using TransponderReceiver;
 
 namespace ATMClasses
 {
-    public class Objectifier : ITrackListEvent
+    public class Objectifier : ITrackListEvent, IObjectifier
     {
         public event EventHandler<TrackListEventArgs> TrackListReady;
 
