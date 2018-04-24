@@ -13,16 +13,16 @@ namespace ATM.Tests.Unit
     public class TrackUpdaterTest
     {
         
-        ITrackUpdater = _uut;
-        IVelocityCourseCalculator velocityCourseCalculator;
-        private IDistance distance;
+        //ITrackUpdater = _uut;
+        //IVelocityCourseCalculator velocityCourseCalculator;
+        //private IDistance distance;
 
-        [SetUp]
-        public void Setup()
-        {
-            distance = new Distance();
-            velocityCourseCalculator = new VelocityCourseCalculater(distance);
+        //[SetUp]
+        //public void Setup()
+        //{
+        //    distance = new Distance();
+        //    velocityCourseCalculator = new VelocityCourseCalculater(distance);
 
-        }
+        //}
     }
 }
