@@ -66,6 +66,7 @@
     <Compile Include="TrackingValidationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrackObjectTest.cs" />
+    <Compile Include="TrackUpdaterTest.cs" />
     <Compile Include="TransponderEventReceivedTest.cs" />
     <Compile Include="TransponderparsingTest.cs" />
     <Compile Include="VelocityCourseCalculatorTest.cs" />

@@ -8,7 +8,7 @@ using Microsoft.Win32;
 
 namespace ATMClasses
 {
-    class TrackUpdater
+    class TrackUpdater : ITrackUpdater
     {
         private IVelocityCourseCalculator _velocityCourseCalculator;
 
