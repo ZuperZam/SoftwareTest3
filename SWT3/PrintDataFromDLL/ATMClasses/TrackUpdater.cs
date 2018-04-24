@@ -10,7 +10,7 @@ namespace ATMClasses
 {
     public class TrackUpdater : ITrackUpdater
     {
-        private IVelocityCourseCalculator _velocityCourseCalculator;
+        public IVelocityCourseCalculator _velocityCourseCalculator { get; }
 
         public TrackUpdater(IVelocityCourseCalculator velocityCourseCalculator)
         {
