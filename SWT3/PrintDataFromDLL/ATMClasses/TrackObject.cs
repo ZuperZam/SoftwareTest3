@@ -40,7 +40,7 @@ namespace ATMClasses
                       "Altitude:\t" + Altitude + " meters\n" +
                       "Timestamp:\t" + PrettyTimeStamp + "\n" +
                       "Velocity:\t" + Velocity + " m/s\n" +
-                      "Course:\t" + Course + " degrees";
+                      "Course:\t\t" + Course + " degrees";
             return str;
         }
     }

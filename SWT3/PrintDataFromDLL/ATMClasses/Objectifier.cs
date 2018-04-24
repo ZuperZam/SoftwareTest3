@@ -33,6 +33,7 @@ namespace ATMClasses
 
         public void MakeTrack(object sender, RawTransponderDataEventArgs e)
         {
+            _trackObjects.Clear();
             foreach (var data in e.TransponderData) //foreach string in the stringlist
             {
                 var trackData = _transponderParsing.TransponderParser(data); //Parse string (contains all track data)
