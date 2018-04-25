@@ -18,8 +18,6 @@ namespace ATMClasses
         public DateTime Timestamp { get; set; }
         public string PrettyTimeStamp { get; set; }
 
-        public IDateFormatter dateFormatter = new DateFormatter();
-
         public TrackObject(List<string> trackInfo)
         {
             Tag = trackInfo[0];
