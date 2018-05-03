@@ -94,7 +94,7 @@ namespace ATM.Tests.Integration
         {
             
             returnList = _trackUpdater.updateTracks(tList1, tList2);
-            Assert.AreEqual(45, returnList[0].Velocity);
+            Assert.AreEqual(-141, returnList[0].Velocity);
 
         }
 
