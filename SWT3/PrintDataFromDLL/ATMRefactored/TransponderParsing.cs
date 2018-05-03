@@ -36,7 +36,7 @@ namespace ATMRefactored
                 _trackObjects.Add(track);
             }
 
-            
+            trackingFiltering.IsTrackInMonitoredAirspace(_trackObjects);
         }
     }
 }

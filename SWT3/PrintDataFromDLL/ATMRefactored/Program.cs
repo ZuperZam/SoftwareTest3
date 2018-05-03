@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TransponderReceiver;
+using ATMRefactored;
+using ATMRefactored.Interfaces;
 
 namespace ATMRefactored
 {
@@ -10,6 +13,7 @@ namespace ATMRefactored
     {
         static void Main(string[] args)
         {
+            
         }
     }
 }
