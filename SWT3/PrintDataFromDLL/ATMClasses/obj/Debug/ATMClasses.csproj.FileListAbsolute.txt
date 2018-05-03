@@ -26,3 +26,17 @@ D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\A
 D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\System.Threading.Tasks.Extensions.dll
 D:\Users\Martin\Dropbox\IKT\4.Semester\SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.csprojResolveAssemblyReference.cache
+C:\Git\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\ATMClasses.dll
+C:\Git\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\ATMClasses.pdb
+C:\Git\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\Castle.Core.dll
+C:\Git\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\NSubstitute.dll
+C:\Git\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\nunit.framework.dll
+C:\Git\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Git\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\TransponderReceiver.dll
+C:\Git\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\nunit.framework.pdb
+C:\Git\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\nunit.framework.xml
+C:\Git\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Git\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.csprojResolveAssemblyReference.cache
+C:\Git\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.csproj.CoreCompileInputs.cache
+C:\Git\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.dll
+C:\Git\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.pdb
