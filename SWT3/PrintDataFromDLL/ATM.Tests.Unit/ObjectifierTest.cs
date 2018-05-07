@@ -40,7 +40,7 @@ namespace ATM.Tests.Unit
             _transponderDataEventArgs = new RawTransponderDataEventArgs(_transponderArgsList);
 
             _uut.TrackListReady += (sender, TrackListEventArgs) =>
-            {
+            {  
                 _trackObjects = TrackListEventArgs.TrackObjects;
             };
         }

@@ -8,6 +8,7 @@ namespace ATMRefactored
 {
     public class TrackingFiltering
     {
+
         private const int MinCoordinates = 10000;
         private const int MaxCoordinates = 90000;
         private const int MinAltitude = 500;

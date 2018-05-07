@@ -14,7 +14,7 @@ namespace ATMRefactored
     {
         public string UglyTimestamp; 
         public TrackingFiltering trackingFiltering;
-        private List<TrackObject> _trackObjects = new List<TrackObject>();
+        public List<TrackObject> _trackObjects = new List<TrackObject>();
 
         public TransponderParsing(ITransponderReceiver receiver)
         {
@@ -33,9 +33,8 @@ namespace ATMRefactored
             {
                 var trackData = TransponderParser(data);
 
-                var track = new TrackObject(trackData);
+                var track = new TrackObject(trackData) {PrettyTimeStamp = FormatTimestamp(trackData[4])};
 
-                track.PrettyTimeStamp = FormatTimestamp(trackData[4]);
 
                 _trackObjects.Add(track);
             }
