@@ -40,3 +40,15 @@ C:\Git\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.cspro
 C:\Git\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.dll
 C:\Git\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.pdb
 C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.csprojResolveAssemblyReference.cache
+C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\ATMClasses.dll
+C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\ATMClasses.pdb
+C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\Castle.Core.dll
+C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\NSubstitute.dll
+C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\nunit.framework.dll
+C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\TransponderReceiver.dll
+C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\nunit.framework.pdb
+C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\nunit.framework.xml
+C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.dll
+C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.pdb
