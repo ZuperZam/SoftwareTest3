@@ -14,7 +14,8 @@ namespace ATMRefactored
         private List<TrackObject> _oldTrackObjects = new List<TrackObject>(); 
         private List<TrackObject> _trackObjects;
 
-       
+        private TrackRendition trackRendition = new TrackRendition();
+        
 
         public void UpdateTracks(List<TrackObject> newTrackObjects)
         {
@@ -39,7 +40,7 @@ namespace ATMRefactored
                 _oldTrackObjects.Add(newTrackObject);
             }
 
-
+            trackRendition.RenderTrack(_oldTrackObjects);
             
         }
 

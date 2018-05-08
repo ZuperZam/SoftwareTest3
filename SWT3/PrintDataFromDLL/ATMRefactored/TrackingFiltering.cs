@@ -15,7 +15,7 @@ namespace ATMRefactored
         private const int MaxCoordinates = 90000;
         private const int MinAltitude = 500;
         private const int MaxAltitude = 20000;
-        
+        private List<TrackObject> filteredTrackObjects = new List<TrackObject>();
         public TrackingFiltering()
         {
             trackUpdater = new TrackUpdater();
@@ -27,17 +27,18 @@ namespace ATMRefactored
             foreach (var data in trackToCheck)
             {
 
-                if ((!ValidateCoordinate(data.XCoord, data.YCoord)) || (!ValidateAltitude(data.Altitude)))
+                if ((ValidateCoordinate(data.XCoord, data.YCoord)) && (ValidateAltitude(data.Altitude)))
                 {
-                    trackToCheck.Remove(data);
+                    filteredTrackObjects.Add(data);
+                    //trackToCheck.Remove(data);
                 }
                 
             }
             
-            trackToCheck.TrimExcess();
+            //trackToCheck.TrimExcess();
             
 
-            trackUpdater.UpdateTracks(trackToCheck);
+            trackUpdater.UpdateTracks(filteredTrackObjects);
 
         }
 
