@@ -11,7 +11,7 @@ namespace ATMRefactored
 {
     public class TrackUpdater : ITrackUpdater
     {
-        
+        private List<TrackObject> _oldTrackObjects = new List<TrackObject>(); 
         private List<TrackObject> _trackObjects;
 
         public TrackUpdater()
@@ -19,13 +19,13 @@ namespace ATMRefactored
            
         }
 
-        public void updateTracks(List<TrackObject> newTrackObjects, List<TrackObject> oldTrackObjects)
+        public void updateTracks(List<TrackObject> newTrackObjects)
         {
             _trackObjects = newTrackObjects;
 
             foreach (var newTrackObject in _trackObjects)
             {
-                foreach (var oldTrackObject in oldTrackObjects)
+                foreach (var oldTrackObject in _oldTrackObjects)
                 {
                     if (newTrackObject.Tag == oldTrackObject.Tag)
                     {
@@ -34,6 +34,12 @@ namespace ATMRefactored
                         break;
                     }
                 }
+            }
+
+            _oldTrackObjects.Clear();
+            foreach (var newTrackObject in newTrackObjects)
+            {
+                _oldTrackObjects.Add(newTrackObject);
             }
 
             
