@@ -37,7 +37,7 @@ namespace ATMRefactored
             trackToCheck.TrimExcess();
             
 
-            trackUpdater.updateTracks(trackToCheck);
+            trackUpdater.UpdateTracks(trackToCheck);
 
         }
 

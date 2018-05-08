@@ -31,7 +31,7 @@ namespace ATMRefactored.Tests.Unit
             _uut = new TrackingFiltering();
             trackData = new List<string> { "ATR423", "50000", "50000", "1000", "20151006213456789" };
             trackObject = new TrackObject(trackData);
-            
+            trackObjects = new List<TrackObject>();
         }
 
 
@@ -39,7 +39,6 @@ namespace ATMRefactored.Tests.Unit
         public void TrackIsRemoved_XCoord_OutofBounds()
         {
             trackObject.XCoord = MaxCoord + 1;
-            trackObjects = new List<TrackObject>();
             trackObjects.Add(trackObject);
             _uut.IsTrackInMonitoredAirspace(trackObjects);
 

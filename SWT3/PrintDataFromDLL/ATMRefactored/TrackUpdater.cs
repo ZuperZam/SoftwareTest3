@@ -14,12 +14,9 @@ namespace ATMRefactored
         private List<TrackObject> _oldTrackObjects = new List<TrackObject>(); 
         private List<TrackObject> _trackObjects;
 
-        public TrackUpdater()
-        {
-           
-        }
+       
 
-        public void updateTracks(List<TrackObject> newTrackObjects)
+        public void UpdateTracks(List<TrackObject> newTrackObjects)
         {
             _trackObjects = newTrackObjects;
 
@@ -41,6 +38,7 @@ namespace ATMRefactored
             {
                 _oldTrackObjects.Add(newTrackObject);
             }
+
 
             
         }

@@ -8,6 +8,15 @@ namespace ATMRefactored.Interfaces
 {
     public interface ITrackUpdater
     {
-           void updateTracks(List<TrackObject> newTrackObjects);
+           void UpdateTracks(List<TrackObject> newTrackObjects);
+
+           int CalculateCourse(TrackObject oldTO, TrackObject newTO);
+
+           int CalculateVelocity(TrackObject oldTO, TrackObject newTO);
+
+           int CalculateDistance1D(int x1, int x2);
+
+           double CalculateDistance2D(int x1, int x2, int y1, int y2);
+
     }
 }
