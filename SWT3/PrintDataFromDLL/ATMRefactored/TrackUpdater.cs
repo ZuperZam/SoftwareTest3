@@ -11,12 +11,17 @@ namespace ATMRefactored
 {
     public class TrackUpdater : ITrackUpdater
     {
-        private List<TrackObject> _oldTrackObjects = new List<TrackObject>(); 
-        private List<TrackObject> _trackObjects;
+        public List<TrackObject> _oldTrackObjects { get; set; }
+        public List<TrackObject> _trackObjects { get; set; }
 
         private EventRendition eventRendition = new EventRendition();
         private TrackRendition trackRendition = new TrackRendition();
-        
+
+        public TrackUpdater()
+        {
+            _oldTrackObjects = new List<TrackObject>();
+            _trackObjects = new List<TrackObject>();
+        }
 
         public void UpdateTracks(List<TrackObject> newTrackObjects)
         {

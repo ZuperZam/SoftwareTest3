@@ -18,9 +18,11 @@ namespace ATMRefactored.Tests.Unit
     {
         TrackObject trackobject1;
         TrackObject trackobject2;
+        TrackObject trackobject3;
         List<String> list1;
         List<String> list2;
-
+        List<String> list3;
+        List<TrackObject> trackObjectList;
         int x1, x2, y1, y2;
 
         private ITrackUpdater _uut;
@@ -29,10 +31,47 @@ namespace ATMRefactored.Tests.Unit
         {
             _uut = new TrackUpdater();
             list1 = new List<string> { "MAR123", "50000", "50000", "1000", "20151006213456789" };
-            list2 = new List<string> { "MAR123", "50000", "50000", "1000", "20151006213456789" };
+            list2 = new List<string> { "FRE595", "50000", "50000", "1000", "20151006213456789" };
+            list3 = new List<string> { "FRE595", "50050", "50050", "980", "20151006213458800" };
             trackobject1 = new TrackObject(list1);
             trackobject2 = new TrackObject(list2);
+            trackobject3 = new TrackObject(list3);
+            trackObjectList = new List<TrackObject>(){trackobject3};
         }
+
+        [Test]
+        public void UpdatedTracksAreAddedToList()
+        {
+            _uut.UpdateTracks(trackObjectList);
+            Assert.That(_uut._oldTrackObjects.Count, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void NewTrackObjectIsAddedToOldList()
+        {
+            _uut._oldTrackObjects.Add(trackobject1);
+            _uut.UpdateTracks(trackObjectList);
+            Assert.That(_uut._oldTrackObjects[0], Is.EqualTo(trackobject3));
+        }
+
+        [Test]
+        public void UpdateTracks_CalculateVelocity_IsCorrect()
+        {
+
+            _uut._oldTrackObjects.Add(trackobject2);
+            _uut.UpdateTracks(trackObjectList);
+            Assert.That(_uut._oldTrackObjects[0].Velocity, Is.EqualTo(35));
+        }
+
+        [Test]
+        public void UpdateTracks_CalculateCourse_IsCorrect()
+        {
+
+            _uut._oldTrackObjects.Add(trackobject2);
+            _uut.UpdateTracks(trackObjectList);
+            Assert.That(_uut._oldTrackObjects[0].Course, Is.EqualTo(45));
+        }
+
 
         [TestCase(5000, 5000, 5000, 5100, 0)]
         [TestCase(5000, 5002, 5000, 5100, 1)]
