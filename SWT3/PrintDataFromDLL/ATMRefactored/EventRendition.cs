@@ -4,10 +4,11 @@ using System.Linq;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using ATMRefactored.Interfaces;
 
 namespace ATMRefactored
 {
-    public class EventRendition
+    public class EventRendition : IEventRendition
     {
         
         private int verticalSeparation = 300;
