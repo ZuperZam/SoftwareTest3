@@ -34,9 +34,9 @@ namespace ATMRefactored.Tests.Unit
             trackObjects = new List<TrackObject>();
         }
 
-
+        // Out of Bounds Upper XCoord
         [Test]
-        public void TrackIsRemoved_XCoord_OutofBounds()
+        public void TrackIsRemoved_XCoord_OutofBoundsUpper()
         {
             trackObject.XCoord = MaxCoord + 1;
             trackObjects.Add(trackObject);
@@ -44,6 +44,59 @@ namespace ATMRefactored.Tests.Unit
 
             Assert.That(_uut.filteredTrackObjects, Is.Empty);
         }
+
+        //Out of Bounds Lower XCoord
+        [Test]
+        public void TrackIsRemoved_XCoord_OutofBoundsLower()
+        {
+            trackObject.XCoord = MinCoord - 1;
+            trackObjects.Add(trackObject);
+            _uut.IsTrackInMonitoredAirspace(trackObjects);
+
+            Assert.That(_uut.filteredTrackObjects, Is.Empty);
+        }
+
+        //Out of Bounds Upper YCoord
+        [Test]
+        public void TrackIsRemoved_YCoord_OutofBounds()
+        {
+            trackObject.XCoord = MaxCoord + 1;
+            trackObjects.Add(trackObject);
+            _uut.IsTrackInMonitoredAirspace(trackObjects);
+
+            Assert.That(_uut.filteredTrackObjects, Is.Empty);
+        }
+
+        //Out of Bounds Lower YCoord
+        [Test]
+        public void TrackIsRemoved_XCoord_OutofBounds()
+        {
+            trackObject.XCoord = MinCoord - 1;
+            trackObjects.Add(trackObject);
+            _uut.IsTrackInMonitoredAirspace(trackObjects);
+
+            Assert.That(_uut.filteredTrackObjects, Is.Empty);
+        }
+
+        //All Parameters In AirSpace
+        [Test]
+        public void TrackIsSaved_AllParameters_InAirSpace()
+        {
+            trackObjects.Add(trackObject);
+            _uut.IsTrackInMonitoredAirspace(trackObjects);
+
+            Assert.That(_uut.filteredTrackObjects[0], Is.EqualTo(trackObject));
+        }
+
+        [Test]
+        public void TrackIsSaved_YCoord_InAirSpace()
+        {
+            trackObjects.Add(trackObject);
+            _uut.IsTrackInMonitoredAirspace(trackObjects);
+
+            Assert.That(_uut.filteredTrackObjects[0], Is.EqualTo(trackObject));
+        }
+
         //X Coords
         [Test]
         public void XCoordinateInsideUpperBoundary_ReturnsTrue()
