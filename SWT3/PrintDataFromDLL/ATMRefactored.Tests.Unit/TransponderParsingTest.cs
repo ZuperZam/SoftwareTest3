@@ -118,7 +118,7 @@ namespace ATMRefactored.Tests.Unit
         public void MakeTrack_AddsTrackObject_CorrectXCoord()
         {
             RaiseFakeTransponderReceiverEvent();
-            Assert.That(_uut.trackObjects[1].Tag, Is.EqualTo("39045"));
+            Assert.That(_uut.trackObjects[0].XCoord, Is.EqualTo(39045));
 
         }
 
@@ -126,7 +126,7 @@ namespace ATMRefactored.Tests.Unit
         public void MakeTrack_AddsTrackObject_CorrectYCoord()
         {
             RaiseFakeTransponderReceiverEvent();
-            Assert.That(_uut.trackObjects[2].Tag, Is.EqualTo("12932"));
+            Assert.That(_uut.trackObjects[0].YCoord, Is.EqualTo(12932));
 
         }
 
@@ -134,7 +134,7 @@ namespace ATMRefactored.Tests.Unit
         public void MakeTrack_AddsTrackObject_CorrectAltitude()
         {
             RaiseFakeTransponderReceiverEvent();
-            Assert.That(_uut.trackObjects[3].Tag, Is.EqualTo("14000"));
+            Assert.That(_uut.trackObjects[0].Altitude, Is.EqualTo(14000));
 
         }
 
@@ -142,7 +142,8 @@ namespace ATMRefactored.Tests.Unit
         public void MakeTrack_AddsTrackObject_CorrectTimestamp()
         {
             RaiseFakeTransponderReceiverEvent();
-            Assert.That(_uut.trackObjects[0].Tag, Is.EqualTo("ATR423"));
+            
+            Assert.That(_uut.trackObjects[0].PrettyTimeStamp, Is.EqualTo("October 6th, 2015, at 21:34:56 and 789 milliseconds"));
 
         }
 

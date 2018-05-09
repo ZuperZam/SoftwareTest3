@@ -42,7 +42,7 @@ namespace ATMRefactored.Tests.Unit
             trackObjects.Add(trackObject);
             _uut.IsTrackInMonitoredAirspace(trackObjects);
 
-            Assert.That(trackObjects.Count, Is.EqualTo(1));
+            Assert.That(_uut.filteredTrackObjects, Is.Empty);
         }
         //X Coords
         [Test]

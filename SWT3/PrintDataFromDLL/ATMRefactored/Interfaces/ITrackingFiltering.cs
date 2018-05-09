@@ -8,7 +8,7 @@ namespace ATMRefactored.Interfaces
 {
     public interface ITrackingFiltering
     {
-
+        List<TrackObject> filteredTrackObjects { get; set; }
         void IsTrackInMonitoredAirspace(List<TrackObject> trackToCheck);
 
         bool ValidateCoordinate(int xCoordinate, int yCoordinate);
