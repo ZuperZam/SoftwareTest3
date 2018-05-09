@@ -15,7 +15,7 @@ namespace ATMRefactored.Tests.Unit
     [TestFixture]
     public class TransponderParsingTest
     {
-		public ITransponderParsing _uut;
+		public TransponderParsing _uut;
         public ITransponderReceiver receiver;
         private List<string> testList = new List<string>();
         private string Tag = "ATR423";
@@ -107,14 +107,44 @@ namespace ATMRefactored.Tests.Unit
         }
 
 		[Test]
-        public void MakeTrack_AddsTrackObjectToList()
+        public void MakeTrack_AddsTrackObject_CorrectTag()
         {
 			RaiseFakeTransponderReceiverEvent();
-            
+            Assert.That(_uut.trackObjects[0].Tag, Is.EqualTo("ATR423"));
 
         }
 
-        
+        [Test]
+        public void MakeTrack_AddsTrackObject_CorrectXCoord()
+        {
+            RaiseFakeTransponderReceiverEvent();
+            Assert.That(_uut.trackObjects[1].Tag, Is.EqualTo("39045"));
+
+        }
+
+        [Test]
+        public void MakeTrack_AddsTrackObject_CorrectYCoord()
+        {
+            RaiseFakeTransponderReceiverEvent();
+            Assert.That(_uut.trackObjects[2].Tag, Is.EqualTo("12932"));
+
+        }
+
+        [Test]
+        public void MakeTrack_AddsTrackObject_CorrectAltitude()
+        {
+            RaiseFakeTransponderReceiverEvent();
+            Assert.That(_uut.trackObjects[3].Tag, Is.EqualTo("14000"));
+
+        }
+
+        [Test]
+        public void MakeTrack_AddsTrackObject_CorrectTimestamp()
+        {
+            RaiseFakeTransponderReceiverEvent();
+            Assert.That(_uut.trackObjects[0].Tag, Is.EqualTo("ATR423"));
+
+        }
 
     }
 

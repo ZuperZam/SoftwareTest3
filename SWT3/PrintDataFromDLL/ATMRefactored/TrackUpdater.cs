@@ -14,6 +14,7 @@ namespace ATMRefactored
         private List<TrackObject> _oldTrackObjects = new List<TrackObject>(); 
         private List<TrackObject> _trackObjects;
 
+        private EventRendition eventRendition = new EventRendition();
         private TrackRendition trackRendition = new TrackRendition();
         
 
@@ -41,7 +42,8 @@ namespace ATMRefactored
             }
 
             trackRendition.RenderTrack(_oldTrackObjects);
-            
+            eventRendition.RenderEvents(_oldTrackObjects);
+
         }
 
         public int CalculateCourse(TrackObject oldTO, TrackObject newTO)

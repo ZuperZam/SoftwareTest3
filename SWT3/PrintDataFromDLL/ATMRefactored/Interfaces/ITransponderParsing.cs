@@ -10,6 +10,11 @@ namespace ATMRefactored.Interfaces
         void MakeTrack(object sender, RawTransponderDataEventArgs e);
         string FormatTimestamp(string timestamp);
 
+        List<TrackObject> trackObjects
+        {
+            get; set;
+
+        }
         string GetDaySuffix(DateTime timeStamp);
     }
 }

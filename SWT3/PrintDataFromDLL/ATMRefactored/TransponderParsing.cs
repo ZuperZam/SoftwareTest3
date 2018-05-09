@@ -14,12 +14,19 @@ namespace ATMRefactored
     {
         
         public TrackingFiltering trackingFiltering;
-        public List<TrackObject> _trackObjects = new List<TrackObject>();
+        
+
+        public List<TrackObject> trackObjects
+        {
+            get; set;
+
+        }
 
         public TransponderParsing(ITransponderReceiver receiver)
         {
             trackingFiltering = new TrackingFiltering();
             receiver.TransponderDataReady += MakeTrack;
+            trackObjects = new List<TrackObject>();
         }
         public List<string> TransponderParser(string transponderData)
         {
@@ -35,10 +42,10 @@ namespace ATMRefactored
 
                 var track = new TrackObject(trackData) {PrettyTimeStamp = FormatTimestamp(trackData[4])};
 
-                _trackObjects.Add(track);
+                trackObjects.Add(track);
             }
 
-            trackingFiltering.IsTrackInMonitoredAirspace(_trackObjects);
+            trackingFiltering.IsTrackInMonitoredAirspace(trackObjects);
         }
 
         public string FormatTimestamp(string timestamp)

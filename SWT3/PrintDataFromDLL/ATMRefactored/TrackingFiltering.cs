@@ -30,12 +30,12 @@ namespace ATMRefactored
                 if ((ValidateCoordinate(data.XCoord, data.YCoord)) && (ValidateAltitude(data.Altitude)))
                 {
                     filteredTrackObjects.Add(data);
-                    //trackToCheck.Remove(data);
+                    
                 }
                 
             }
             
-            //trackToCheck.TrimExcess();
+            
             
 
             trackUpdater.UpdateTracks(filteredTrackObjects);
