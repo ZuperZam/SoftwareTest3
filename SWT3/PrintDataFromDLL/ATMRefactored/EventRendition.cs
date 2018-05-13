@@ -22,7 +22,7 @@ namespace ATMRefactored
                 {
                     if (IsInOtherAirSpace(objectsToCheck[i], objectsToCheck[j]))
                     {
-                        Console.WriteLine(objectsToCheck[i].Tag + " and " + objectsToCheck[j].Tag + "are breaking separation rules!");
+                        Console.WriteLine(objectsToCheck[i].Tag + " and " + objectsToCheck[j].Tag + " are breaking separation rules!");
                         LogSeparationEvent(objectsToCheck[i], objectsToCheck[j]);
                     }
                 }

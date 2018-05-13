@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,17 +29,42 @@ namespace ATMRefactored.Tests.Unit
         {
             _uut = new EventRendition();
             list1 = new List<string> {"MAR123", "50000", "50000", "1000", "20151006213456789"};
-            list2 = new List<string> {"MAR123", "50000", "50000", "1000", "20151006213456789"};
+            list2 = new List<string> {"FRE123", "50000", "50000", "1000", "20151006213456789"};
             trackobject1 = new TrackObject(list1);
             trackobject2 = new TrackObject(list2);
             trackObjectList = new List<TrackObject>(){trackobject1, trackobject2};
-
         }
 
-        public void Something()
+        [Test]
+        public void RenderEvents_LogsEvent()
         {
             _uut.RenderEvents(trackObjectList);
-            Assert.That(_uut.LogSeparationEvent(trackObjectList[0], trackObjectList[1]), );
+            using (var stream = new MemoryStream())
+            using (var writer = new StreamWriter(stream))
+            {
+
+                
+
+                string[] lines = System.IO.File.ReadAllLines(@"SeparatationEventLog.txt");
+
+                Assert.AreEqual("Timestamp: 06-10-2015 21:34:56\tMAR123 and FRE123 are breaking separation rules", lines[0]);
+            }
+        }
+
+        [Test]
+        public void LogSeparationEvent_LogsEvent_ToFile()
+        {
+            
+            using (var stream = new MemoryStream())
+            using (var writer = new StreamWriter(stream))
+            {
+                
+                _uut.LogSeparationEvent(trackobject1, trackobject2);
+                
+                string[] lines = System.IO.File.ReadAllLines(@"SeparatationEventLog.txt");
+                
+                Assert.AreEqual("Timestamp: 06-10-2015 21:34:56\tMAR123 and FRE123 are breaking separation rules", lines[0]);
+            }
         }
 
         //Horizontal, no altitude difference

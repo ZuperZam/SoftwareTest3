@@ -8,12 +8,18 @@ namespace ATMRefactored
 {
     public class TrackRendition
     {
+        
+
         public void RenderTrack(List<TrackObject> objectsToPrint)
         {
+            Console.Clear();
             foreach (var data in objectsToPrint)
             {
                 Console.WriteLine(data.ToString());
+                Console.WriteLine();
             }
+
+           
         }
 
 
