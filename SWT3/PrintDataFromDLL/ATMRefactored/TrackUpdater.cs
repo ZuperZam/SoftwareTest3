@@ -12,7 +12,7 @@ namespace ATMRefactored
     public class TrackUpdater : ITrackUpdater
     {
         public List<TrackObject> _oldTrackObjects { get; set; }
-        public List<TrackObject> _trackObjects { get; set; }
+        
 
         private EventRendition eventRendition = new EventRendition();
         private TrackRendition trackRendition = new TrackRendition();
@@ -20,23 +20,20 @@ namespace ATMRefactored
         public TrackUpdater()
         {
             _oldTrackObjects = new List<TrackObject>();
-            _trackObjects = new List<TrackObject>();
+           
         }
 
         public void UpdateTracks(List<TrackObject> newTrackObjects)
         {
-            //_trackObjects = newTrackObjects;
 
-            foreach (var newTrackObject in _trackObjects)
+            foreach (var newTrackObject in newTrackObjects)
             {
                 foreach (var oldTrackObject in _oldTrackObjects)
                 {
-                    if (newTrackObject.Tag == oldTrackObject.Tag)
-                    {
-                        newTrackObject.Velocity = CalculateVelocity(oldTrackObject, newTrackObject);
-                        newTrackObject.Course = CalculateCourse(oldTrackObject, newTrackObject);
-                        break;
-                    }
+                    if (newTrackObject.Tag != oldTrackObject.Tag) continue;
+                    newTrackObject.Velocity = CalculateVelocity(oldTrackObject, newTrackObject);
+                    newTrackObject.Course = CalculateCourse(oldTrackObject, newTrackObject);
+                    break;
                 }
             }
 
@@ -48,7 +45,7 @@ namespace ATMRefactored
             }
             
             trackRendition.RenderTrack(_oldTrackObjects);
-            //eventRendition.RenderEvents(_oldTrackObjects);
+            eventRendition.RenderEvents(_oldTrackObjects);
 
         }
 

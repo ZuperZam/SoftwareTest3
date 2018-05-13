@@ -36,13 +36,21 @@ namespace ATMRefactored
 
         public void MakeTrack(object sender, RawTransponderDataEventArgs e)
         {
+            var IsInList = false; 
+
             foreach (var data in e.TransponderData) //foreach string in the stringlist
             {
                 var trackData = TransponderParser(data);
 
                 var track = new TrackObject(trackData) {PrettyTimeStamp = FormatTimestamp(trackData[4])};
 
-                //if (!trackObjects.Contains(track.PrettyTimeStamp))
+                foreach (var d in trackObjects)
+                {
+                    if (d.Tag == track.Tag)
+                        IsInList = true;
+                }
+
+                if (IsInList == false)
                 trackObjects.Add(track);
             }
 
