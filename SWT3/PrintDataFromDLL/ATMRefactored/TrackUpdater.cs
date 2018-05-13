@@ -45,9 +45,12 @@ namespace ATMRefactored
             {
                 _oldTrackObjects.Add(newTrackObject);
             }
-            Console.Clear();
+            
+
+            for(int i = 0; i < 50; i++) //"Refreshes" screen without causing issues in tests
+                Console.WriteLine();
             trackRendition.RenderTrack(_oldTrackObjects);
-            //eventRendition.RenderEvents(_oldTrackObjects);
+            eventRendition.RenderEvents(_oldTrackObjects);
 
         }
 

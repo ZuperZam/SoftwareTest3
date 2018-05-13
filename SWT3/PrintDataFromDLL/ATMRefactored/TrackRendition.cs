@@ -8,8 +8,6 @@ namespace ATMRefactored
 {
     public class TrackRendition
     {
-        
-
         public void RenderTrack(List<TrackObject> objectsToPrint)
         {
             foreach (var data in objectsToPrint)
@@ -17,10 +15,6 @@ namespace ATMRefactored
                 Console.WriteLine(data.ToString());
                 Console.WriteLine();
             }
-
-            
         }
-
-
     }
 }
