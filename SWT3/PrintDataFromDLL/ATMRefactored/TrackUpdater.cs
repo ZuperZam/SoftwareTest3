@@ -25,7 +25,7 @@ namespace ATMRefactored
 
         public void UpdateTracks(List<TrackObject> newTrackObjects)
         {
-            _trackObjects = newTrackObjects;
+            //_trackObjects = newTrackObjects;
 
             foreach (var newTrackObject in _trackObjects)
             {
@@ -41,13 +41,14 @@ namespace ATMRefactored
             }
 
             _oldTrackObjects.Clear();
+
             foreach (var newTrackObject in newTrackObjects)
             {
                 _oldTrackObjects.Add(newTrackObject);
             }
-
+            
             trackRendition.RenderTrack(_oldTrackObjects);
-            eventRendition.RenderEvents(_oldTrackObjects);
+            //eventRendition.RenderEvents(_oldTrackObjects);
 
         }
 

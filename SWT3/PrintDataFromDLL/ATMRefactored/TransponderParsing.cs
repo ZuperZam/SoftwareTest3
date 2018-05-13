@@ -42,6 +42,7 @@ namespace ATMRefactored
 
                 var track = new TrackObject(trackData) {PrettyTimeStamp = FormatTimestamp(trackData[4])};
 
+                //if (!trackObjects.Contains(track.PrettyTimeStamp))
                 trackObjects.Add(track);
             }
 

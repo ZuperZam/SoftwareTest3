@@ -16,10 +16,7 @@ namespace ATMRefactored
             var transponderDataReceiver = TransponderReceiverFactory.CreateTransponderDataReceiver();
             transponderDataReceiver.TransponderDataReady += OnTransponderDataReady;
             var transponderParsing = new TransponderParsing(transponderDataReceiver);
-            var trackingFiltering = new TrackingFiltering();
-            var trackUpdater = new TrackUpdater();
-            var trackRendition = new TrackRendition();
-            var eventRendition = new EventRendition();
+            
 
             Console.ReadLine();
         }
