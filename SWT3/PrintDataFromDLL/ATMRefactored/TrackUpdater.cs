@@ -30,10 +30,12 @@ namespace ATMRefactored
             {
                 foreach (var oldTrackObject in _oldTrackObjects)
                 {
-                    if (newTrackObject.Tag != oldTrackObject.Tag) continue;
-                    newTrackObject.Velocity = CalculateVelocity(oldTrackObject, newTrackObject);
-                    newTrackObject.Course = CalculateCourse(oldTrackObject, newTrackObject);
-                    break;
+                    if (newTrackObject.Tag != oldTrackObject.Tag)
+                    {
+                        newTrackObject.Velocity = CalculateVelocity(oldTrackObject, newTrackObject);
+                        newTrackObject.Course = CalculateCourse(oldTrackObject, newTrackObject);
+                        break;
+                    }
                 }
             }
 
@@ -43,9 +45,9 @@ namespace ATMRefactored
             {
                 _oldTrackObjects.Add(newTrackObject);
             }
-            
+            Console.Clear();
             trackRendition.RenderTrack(_oldTrackObjects);
-            eventRendition.RenderEvents(_oldTrackObjects);
+            //eventRendition.RenderEvents(_oldTrackObjects);
 
         }
 

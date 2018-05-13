@@ -36,7 +36,7 @@ namespace ATMRefactored
 
         public void MakeTrack(object sender, RawTransponderDataEventArgs e)
         {
-            var IsInList = false; 
+            var IsInList = false;
 
             foreach (var data in e.TransponderData) //foreach string in the stringlist
             {
@@ -47,11 +47,20 @@ namespace ATMRefactored
                 foreach (var d in trackObjects)
                 {
                     if (d.Tag == track.Tag)
+                    {
                         IsInList = true;
+                        d.Altitude = track.Altitude;
+                        d.PrettyTimeStamp = track.PrettyTimeStamp;
+                        d.XCoord = track.XCoord;
+                        d.YCoord = track.YCoord;
+                    }
                 }
 
                 if (IsInList == false)
-                trackObjects.Add(track);
+                {
+                    trackObjects.Add(track);
+                }
+                IsInList = false;
             }
 
             trackingFiltering.IsTrackInMonitoredAirspace(trackObjects);

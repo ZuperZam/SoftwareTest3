@@ -24,16 +24,15 @@ namespace ATMRefactored
         }
         public void IsTrackInMonitoredAirspace(List<TrackObject> trackToCheck)
         {
+            filteredTrackObjects.Clear();
             //Checks if X [1] and Y [2] coordinates are in the monitored area
             //And if altitude [3] is in monitored area
             foreach (var data in trackToCheck)
             {
-
                 if ((ValidateCoordinate(data.XCoord, data.YCoord)) && (ValidateAltitude(data.Altitude)))
                 {
                     filteredTrackObjects.Add(data);
                 }
-                
             }
             
             trackUpdater.UpdateTracks(filteredTrackObjects);

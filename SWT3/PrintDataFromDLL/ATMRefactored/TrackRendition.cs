@@ -12,8 +12,6 @@ namespace ATMRefactored
 
         public void RenderTrack(List<TrackObject> objectsToPrint)
         {
-            Console.Clear();
-
             foreach (var data in objectsToPrint)
             {
                 Console.WriteLine(data.ToString());
