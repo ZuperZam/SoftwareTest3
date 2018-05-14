@@ -52,3 +52,18 @@ C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\
 C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.dll
 C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.pdb
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\ATMClasses.dll
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\ATMClasses.pdb
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\Castle.Core.dll
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\NSubstitute.dll
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\nunit.framework.dll
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\TransponderReceiver.dll
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\nunit.framework.pdb
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\nunit.framework.xml
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.csprojResolveAssemblyReference.cache
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.csproj.CoreCompileInputs.cache
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.csproj.CopyComplete
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.dll
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.pdb

@@ -11,7 +11,7 @@ namespace ATMRefactored.Interfaces
         void RenderEvents(List<TrackObject> objectsToCheck);
         bool IsInOtherAirSpace(TrackObject TO1, TrackObject TO2);
 
-        void LogSeparationEvent(TrackObject TO1, TrackObject TO2);
+        void LogSeparationEvent(TupleList<TrackObject, TrackObject> TOList);
 
         int CalculateDistance1D(int x1, int x2);
 

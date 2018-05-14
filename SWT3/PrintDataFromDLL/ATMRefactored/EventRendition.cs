@@ -10,10 +10,11 @@ namespace ATMRefactored
 {
     public class EventRendition : IEventRendition
     {
-        
         private int verticalSeparation = 300;
         private int horizontalSeparation = 5000;
-
+        private TupleList<TrackObject, TrackObject> _conflictList = new TupleList<TrackObject, TrackObject>();
+        private TupleList<TrackObject, TrackObject> _newObjects = new TupleList<TrackObject, TrackObject>();
+        private TupleList<TrackObject, TrackObject> _oldObjects = new TupleList<TrackObject, TrackObject>();
         public void RenderEvents(List<TrackObject> objectsToCheck)
         {
             for (int i = 0; i < objectsToCheck.Count - 1; i++)
@@ -22,8 +23,10 @@ namespace ATMRefactored
                 {
                     if (IsInOtherAirSpace(objectsToCheck[i], objectsToCheck[j]))
                     {
-                        Console.WriteLine(objectsToCheck[i].Tag + " and " + objectsToCheck[j].Tag + " are breaking separation rules!");
-                        LogSeparationEvent(objectsToCheck[i], objectsToCheck[j]);
+                        _conflictList.Add(objectsToCheck[i], objectsToCheck[j]);
+                        LogSeparationEvent(_conflictList);
+                        _conflictList.Clear();
+                        _conflictList.TrimExcess();
                     }
                 }
             }
@@ -38,15 +41,64 @@ namespace ATMRefactored
             return horizontalDistance < horizontalSeparation && verticalDistance < verticalSeparation;
         }
 
-        public void LogSeparationEvent(TrackObject TO1, TrackObject TO2)
+        public void LogSeparationEvent(TupleList<TrackObject, TrackObject> TOList)
         {
-            string output = "Timestamp: " + TO1.Timestamp + "\t" +
-                            TO1.Tag + " and " + TO2.Tag + " are breaking separation rules";
 
-            using (StreamWriter outputFile = new StreamWriter(@"SeparatationEventLog.txt", true))
+
+            foreach (var conflictingObject in TOList)
             {
-                outputFile.WriteLine(output);
+                _newObjects.Add(conflictingObject.Item1, conflictingObject.Item2);
             }
+
+            foreach (var newEventObject in _newObjects)
+            {
+                foreach (var oldEventObject in _oldObjects)
+                {
+                    if (newEventObject.Item1.Tag != oldEventObject.Item1.Tag &&
+                        newEventObject.Item2.Tag != oldEventObject.Item2.Tag)
+                    {
+                        string output = "Timestamp: " + newEventObject.Item1.Timestamp + "\t" +
+                                        newEventObject.Item1.Tag + " and " + newEventObject.Item2.Tag + " are breaking separation rules";
+
+                        Console.WriteLine(output);
+
+                        using (StreamWriter outputFile = new StreamWriter(@"SeparatationEventLog.txt", true))
+                        {
+                            outputFile.WriteLine(output);
+                        }
+
+                        _oldObjects.Add(newEventObject.Item1, newEventObject.Item2);
+                       
+                    }
+                    
+                }
+            }
+
+            foreach (var oldEventObject in _oldObjects)
+            {
+                foreach (var newEventObject in _newObjects)
+                {
+                    if (newEventObject.Item1.Tag == oldEventObject.Item1.Tag &&
+                        newEventObject.Item2.Tag == oldEventObject.Item2.Tag)
+                    {
+                        string output = "Timestamp: " + newEventObject.Item1.Timestamp + "\t" +
+                                        newEventObject.Item1.Tag + " and " + newEventObject.Item2.Tag + " has stopped breaking seperation rules";
+
+                        Console.WriteLine(output);
+
+                        using (StreamWriter outputFile = new StreamWriter(@"SeparatationEventLog.txt", true))
+                        {
+                            outputFile.WriteLine(output);
+                        }
+
+                        _oldObjects.Remove(newEventObject);
+                        _oldObjects.TrimExcess();
+
+                    }
+
+                }
+            }
+            
         }
 
         public int CalculateDistance1D(int x1, int x2)
@@ -61,6 +113,14 @@ namespace ATMRefactored
             Int64 yDist = CalculateDistance1D(y1, y2);
 
             return Math.Sqrt((xDist * xDist) + (yDist * yDist));
+        }
+    }
+
+    public class TupleList<T1, T2> : List<Tuple<T1, T2>>
+    {
+        public void Add(T1 item1, T2 item2)
+        {
+            Add(new Tuple<T1, T2>(item1, item2));
         }
     }
 }

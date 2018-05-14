@@ -72,3 +72,23 @@ C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\
 C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\obj\Debug\ATM.Tests.Unit.csprojResolveAssemblyReference.cache
 C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\obj\Debug\ATM.Tests.Unit.dll
 C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\obj\Debug\ATM.Tests.Unit.pdb
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\ATM.Tests.Unit.dll
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\ATM.Tests.Unit.pdb
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\ATMClasses.dll
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\Castle.Core.dll
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\NSubstitute.dll
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\nunit.framework.dll
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\PrintDataFromDLL.exe
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\TransponderReceiver.dll
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\ATMClasses.pdb
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\PrintDataFromDLL.pdb
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\PrintDataFromDLL.exe.config
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\nunit.framework.pdb
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\nunit.framework.xml
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\obj\Debug\ATM.Tests.Unit.csprojResolveAssemblyReference.cache
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\obj\Debug\ATM.Tests.Unit.csproj.CoreCompileInputs.cache
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\obj\Debug\ATM.Tests.Unit.csproj.CopyComplete
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\obj\Debug\ATM.Tests.Unit.dll
+C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\obj\Debug\ATM.Tests.Unit.pdb
