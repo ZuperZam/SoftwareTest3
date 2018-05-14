@@ -108,8 +108,12 @@ namespace ATMRefactored
             if (hasChanged)
             {
                 _oldObjects.Clear();
-                _oldObjects.TrimExcess();
-                _oldObjects = TOList;
+                //_oldObjects.TrimExcess();
+
+                foreach (var trackObject in TOList)
+                {
+                    _oldObjects.Add(trackObject);
+                }
                 hasChanged = false;
             }
 
