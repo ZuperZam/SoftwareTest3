@@ -30,7 +30,7 @@ namespace ATMRefactored
             {
                 foreach (var oldTrackObject in _oldTrackObjects)
                 {
-                    if (newTrackObject.Tag != oldTrackObject.Tag)
+                    if (newTrackObject.Tag == oldTrackObject.Tag)
                     {
                         newTrackObject.Velocity = CalculateVelocity(oldTrackObject, newTrackObject);
                         newTrackObject.Course = CalculateCourse(oldTrackObject, newTrackObject);

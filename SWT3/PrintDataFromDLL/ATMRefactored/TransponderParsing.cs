@@ -14,19 +14,18 @@ namespace ATMRefactored
     {
         
         public TrackingFiltering trackingFiltering;
-        
+
 
         public List<TrackObject> trackObjects
         {
             get; set;
-
         }
 
         public TransponderParsing(ITransponderReceiver receiver)
         {
             trackingFiltering = new TrackingFiltering();
-            receiver.TransponderDataReady += MakeTrack;
             trackObjects = new List<TrackObject>();
+            receiver.TransponderDataReady += MakeTrack;
         }
         public List<string> TransponderParser(string transponderData)
         {
@@ -36,7 +35,13 @@ namespace ATMRefactored
 
         public void MakeTrack(object sender, RawTransponderDataEventArgs e)
         {
-            var IsInList = false;
+            //var IsInList = false;
+            //var trackObjects = new List<TrackObject>();
+            //if (trackObjects.Count > 0)
+            {
+                trackObjects.Clear();
+                
+            }
 
             foreach (var data in e.TransponderData) //foreach string in the stringlist
             {
@@ -44,23 +49,23 @@ namespace ATMRefactored
 
                 var track = new TrackObject(trackData) {PrettyTimeStamp = FormatTimestamp(trackData[4])};
 
-                foreach (var d in trackObjects)
-                {
-                    if (d.Tag == track.Tag)
-                    {
-                        IsInList = true;
-                        d.Altitude = track.Altitude;
-                        d.PrettyTimeStamp = track.PrettyTimeStamp;
-                        d.XCoord = track.XCoord;
-                        d.YCoord = track.YCoord;
-                    }
-                }
+                //foreach (var d in trackObjects)
+                //{
+                //    if (d.Tag == track.Tag)
+                //    {
+                //        //IsInList = true;
+                //        d.Altitude = track.Altitude;
+                //        d.PrettyTimeStamp = track.PrettyTimeStamp;
+                //        d.XCoord = track.XCoord;
+                //        d.YCoord = track.YCoord;
+                //    }
+                //}
 
-                if (IsInList == false)
-                {
+                //if (IsInList == false)
+                //{
                     trackObjects.Add(track);
-                }
-                IsInList = false;
+                //}
+                //IsInList = false;
             }
 
             trackingFiltering.IsTrackInMonitoredAirspace(trackObjects);
