@@ -10,10 +10,9 @@ namespace ATMRefactored
 {
     public class EventRendition : IEventRendition
     {
-        private int verticalSeparation = 300;
-        private int horizontalSeparation = 5000;
+        private int verticalSeparation = 30000;
+        private int horizontalSeparation = 500000;
         private TupleList<TrackObject, TrackObject> _conflictList = new TupleList<TrackObject, TrackObject>();
-        private TupleList<TrackObject, TrackObject> _newObjects = new TupleList<TrackObject, TrackObject>();
         private TupleList<TrackObject, TrackObject> _oldObjects = new TupleList<TrackObject, TrackObject>();
         public void RenderEvents(List<TrackObject> objectsToCheck)
         {
@@ -24,12 +23,17 @@ namespace ATMRefactored
                     if (IsInOtherAirSpace(objectsToCheck[i], objectsToCheck[j]))
                     {
                         _conflictList.Add(objectsToCheck[i], objectsToCheck[j]);
-                        LogSeparationEvent(_conflictList);
-                        _conflictList.Clear();
-                        _conflictList.TrimExcess();
+
+                        string output = "Timestamp: " + objectsToCheck[i].Timestamp + "\t" +
+                                        objectsToCheck[i].Tag + " and " + objectsToCheck[j].Tag + " are breaking separation rules";
+
+                        Console.WriteLine(output);
                     }
                 }
             }
+            LogSeparationEvent(_conflictList);
+            _conflictList.Clear();
+            _conflictList.TrimExcess();
         }
 
         //Will return true if a Track is in another Track's airspace
@@ -43,62 +47,72 @@ namespace ATMRefactored
 
         public void LogSeparationEvent(TupleList<TrackObject, TrackObject> TOList)
         {
+            bool isInList = false;
+            bool isNotInList = true;
+            bool hasChanged = false;
 
-
-            foreach (var conflictingObject in TOList)
-            {
-                _newObjects.Add(conflictingObject.Item1, conflictingObject.Item2);
-            }
-
-            foreach (var newEventObject in _newObjects)
+            foreach (var newEventObject in TOList)
             {
                 foreach (var oldEventObject in _oldObjects)
                 {
-                    if (newEventObject.Item1.Tag != oldEventObject.Item1.Tag &&
-                        newEventObject.Item2.Tag != oldEventObject.Item2.Tag)
+                    if ((Equals(newEventObject.Item1.Tag, oldEventObject.Item1.Tag) && Equals(newEventObject.Item2.Tag, oldEventObject.Item2.Tag)) || 
+                        (Equals(newEventObject.Item1.Tag, oldEventObject.Item2.Tag) && Equals(newEventObject.Item2.Tag, oldEventObject.Item1.Tag)))
                     {
-                        string output = "Timestamp: " + newEventObject.Item1.Timestamp + "\t" +
-                                        newEventObject.Item1.Tag + " and " + newEventObject.Item2.Tag + " are breaking separation rules";
-
-                        Console.WriteLine(output);
-
-                        using (StreamWriter outputFile = new StreamWriter(@"SeparatationEventLog.txt", true))
-                        {
-                            outputFile.WriteLine(output);
-                        }
-
-                        _oldObjects.Add(newEventObject.Item1, newEventObject.Item2);
-                       
+                        isInList = true;
                     }
-                    
                 }
+
+                if (!isInList)
+                {
+                    string output = "Timestamp: " + newEventObject.Item1.Timestamp + "\t" +
+                                    newEventObject.Item1.Tag + " and " + newEventObject.Item2.Tag + " are breaking separation rules";
+
+                    using (StreamWriter outputFile = new StreamWriter(@"SeparatationEventLog.txt", true))
+                    {
+                        outputFile.WriteLine(output);
+                    }
+
+                    hasChanged = true;
+                }
+
+                isInList = false;
             }
 
             foreach (var oldEventObject in _oldObjects)
             {
-                foreach (var newEventObject in _newObjects)
+                foreach (var newEventObject in TOList)
                 {
-                    if (newEventObject.Item1.Tag == oldEventObject.Item1.Tag &&
-                        newEventObject.Item2.Tag == oldEventObject.Item2.Tag)
+                    if ((Equals(newEventObject.Item1.Tag, oldEventObject.Item1.Tag) && Equals(newEventObject.Item2.Tag, oldEventObject.Item2.Tag)) ||
+                        (Equals(newEventObject.Item1.Tag, oldEventObject.Item2.Tag) && Equals(newEventObject.Item2.Tag, oldEventObject.Item1.Tag)))
                     {
-                        string output = "Timestamp: " + newEventObject.Item1.Timestamp + "\t" +
-                                        newEventObject.Item1.Tag + " and " + newEventObject.Item2.Tag + " has stopped breaking seperation rules";
+                        isNotInList = false;
+                    }
+                }
 
-                        Console.WriteLine(output);
+                if (isNotInList)
+                {
+                    string output = "Timestamp: " + oldEventObject.Item1.Timestamp + "\t" +
+                                    oldEventObject.Item1.Tag + " and " + oldEventObject.Item2.Tag + " have stopped breaking seperation rules";
 
-                        using (StreamWriter outputFile = new StreamWriter(@"SeparatationEventLog.txt", true))
-                        {
-                            outputFile.WriteLine(output);
-                        }
-
-                        _oldObjects.Remove(newEventObject);
-                        _oldObjects.TrimExcess();
-
+                    using (StreamWriter outputFile = new StreamWriter(@"SeparatationEventLog.txt", true))
+                    {
+                        outputFile.WriteLine(output);
                     }
 
+                    hasChanged = true;
                 }
+
+                isNotInList = true;
             }
-            
+
+            if (hasChanged)
+            {
+                _oldObjects.Clear();
+                _oldObjects.TrimExcess();
+                _oldObjects = TOList;
+                hasChanged = false;
+            }
+
         }
 
         public int CalculateDistance1D(int x1, int x2)
