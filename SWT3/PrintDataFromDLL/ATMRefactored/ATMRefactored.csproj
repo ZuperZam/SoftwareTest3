@@ -55,7 +55,6 @@
     <Compile Include="EventRendition.cs" />
     <Compile Include="Interfaces\IEventRendition.cs" />
     <Compile Include="Interfaces\ITrackingFiltering.cs" />
-    <Compile Include="Interfaces\ITrackListEvent.cs" />
     <Compile Include="Interfaces\ITrackRendition.cs" />
     <Compile Include="Interfaces\ITrackUpdater.cs" />
     <Compile Include="Interfaces\ITransponderParsing.cs" />

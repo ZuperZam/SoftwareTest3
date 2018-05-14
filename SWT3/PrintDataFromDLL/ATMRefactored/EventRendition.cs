@@ -10,8 +10,8 @@ namespace ATMRefactored
 {
     public class EventRendition : IEventRendition
     {
-        private int verticalSeparation = 30000;
-        private int horizontalSeparation = 500000;
+        private int verticalSeparation = 300;
+        private int horizontalSeparation = 5000;
         private TupleList<TrackObject, TrackObject> _conflictList = new TupleList<TrackObject, TrackObject>();
         private TupleList<TrackObject, TrackObject> _oldObjects = new TupleList<TrackObject, TrackObject>();
         public void RenderEvents(List<TrackObject> objectsToCheck)

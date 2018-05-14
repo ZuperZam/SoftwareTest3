@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,7 @@ namespace ATMRefactored.Tests.Unit
         List<String> list1;
         List<String> list2;
         List<TrackObject> trackObjectList;
+        TupleList<TrackObject, TrackObject> tupleList;
         [SetUp]
         public void Setup()
         {
@@ -32,18 +34,19 @@ namespace ATMRefactored.Tests.Unit
             list2 = new List<string> {"FRE123", "50000", "50000", "1000", "20151006213456789"};
             trackobject1 = new TrackObject(list1);
             trackobject2 = new TrackObject(list2);
-            trackObjectList = new List<TrackObject>(){trackobject1, trackobject2};
+            trackObjectList = new List<TrackObject>(){};
+            tupleList = new TupleList<TrackObject, TrackObject>();
         }
 
         [Test]
         public void RenderEvents_LogsEvent()
         {
+            trackObjectList.Add(trackobject1);
+            trackObjectList.Add(trackobject2);
             _uut.RenderEvents(trackObjectList);
             using (var stream = new MemoryStream())
             using (var writer = new StreamWriter(stream))
             {
-
-                
 
                 string[] lines = System.IO.File.ReadAllLines(@"SeparatationEventLog.txt");
 
@@ -51,21 +54,44 @@ namespace ATMRefactored.Tests.Unit
             }
         }
 
-        //[Test]
-        //public void LogSeparationEvent_LogsEvent_ToFile()
-        //{
+        [Test]
+        public void LogSeparationEvent_LogsEvent_StartedBreakingSeperationRules()
+        {
+            tupleList.Add(trackobject1, trackobject2);
+
+            _uut.LogSeparationEvent(tupleList);
+
             
-        //    using (var stream = new MemoryStream())
-        //    using (var writer = new StreamWriter(stream))
-        //    {
+            using (var stream = new MemoryStream())
+            using (var writer = new StreamWriter(stream))
+            {
+                string[] lines = System.IO.File.ReadAllLines(@"SeparatationEventLog.txt");
                 
-        //        _uut.LogSeparationEvent(trackobject1, trackobject2);
+                Assert.AreEqual("Timestamp: 06-10-2015 21:34:56\tMAR123 and FRE123 are breaking separation rules", lines[0]);
+            }
+        }
+
+        [Test]
+        public void LogSeparationEvent_LogsEvent_StoppedBreakingSeperationRules(int i)
+        {
+            tupleList.Add(trackobject1, trackobject2);
+
+            _uut.LogSeparationEvent(tupleList);
+
+            tupleList.Clear();
+            tupleList.TrimExcess();
+            tupleList[0].Item1.Altitude = 500;
+
+            _uut.LogSeparationEvent(tupleList);
+            
+            using (var stream = new MemoryStream())
+            using (var writer = new StreamWriter(stream))
+            {
+                string[] lines = System.IO.File.ReadAllLines(@"SeparatationEventLog.txt");
                 
-        //        string[] lines = System.IO.File.ReadAllLines(@"SeparatationEventLog.txt");
-                
-        //        Assert.AreEqual("Timestamp: 06-10-2015 21:34:56\tMAR123 and FRE123 are breaking separation rules", lines[0]);
-        //    }
-        //}
+                Assert.AreEqual("Timestamp: 06-10-2015 21:34:56\tMAR123 and FRE123 have stopped breaking seperation rules", lines[]);
+            }
+        }
 
         //Horizontal, no altitude difference
         [TestCase(5000, 9999, 1000, 1000)]
@@ -127,6 +153,10 @@ namespace ATMRefactored.Tests.Unit
 
         }
 
+        [TestCase(5, 10, 5)]
+        [TestCase(10, 5, 5)]
+        [TestCase(-5, 10, 5)]
+        [TestCase(5, -10, 15)]
         public void Is1DDistanceCorrect(int x1, int x2, int result)
         {
             result = Math.Abs(x1 - x2);
