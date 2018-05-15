@@ -54,10 +54,14 @@
   <ItemGroup>
     <Compile Include="EventRendition.cs" />
     <Compile Include="Interfaces\IEventRendition.cs" />
+    <Compile Include="SeperationEvent.cs" />
+    <Compile Include="Interfaces\ISeperationEvent.cs" />
+    <Compile Include="Interfaces\ILogWriter.cs" />
     <Compile Include="Interfaces\ITrackingFiltering.cs" />
     <Compile Include="Interfaces\ITrackRendition.cs" />
     <Compile Include="Interfaces\ITrackUpdater.cs" />
     <Compile Include="Interfaces\ITransponderParsing.cs" />
+    <Compile Include="LogWriter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrackingFiltering.cs" />

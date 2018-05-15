@@ -10,16 +10,16 @@ namespace ATMRefactored
 {
     public class TrackingFiltering : ITrackingFiltering
     {
-        private ITrackUpdater trackUpdater;
+        private ITrackUpdater _trackUpdater;
         private const int MinCoordinates = 10000;
         private const int MaxCoordinates = 90000;
         private const int MinAltitude = 500;
         private const int MaxAltitude = 20000;
         public List<TrackObject> filteredTrackObjects { get; set; }
 
-        public TrackingFiltering()
+        public TrackingFiltering(ITrackUpdater trackUpdater)
         {
-            trackUpdater = new TrackUpdater();
+            _trackUpdater = trackUpdater;
             filteredTrackObjects = new List<TrackObject>();
         }
         public void IsTrackInMonitoredAirspace(List<TrackObject> trackToCheck)
@@ -35,7 +35,7 @@ namespace ATMRefactored
                 }
             }
             
-            trackUpdater.UpdateTracks(filteredTrackObjects);
+            _trackUpdater.UpdateTracks(filteredTrackObjects);
         }
 
         public bool ValidateCoordinate(int xCoordinate, int yCoordinate)

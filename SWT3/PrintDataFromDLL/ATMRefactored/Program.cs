@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using TransponderReceiver;
 using ATMRefactored;
 using ATMRefactored.Interfaces;
-using TransponderReceiver;
+
 namespace ATMRefactored
 {
     public class Program
@@ -15,7 +15,15 @@ namespace ATMRefactored
         {
             var transponderDataReceiver = TransponderReceiverFactory.CreateTransponderDataReceiver();
             transponderDataReceiver.TransponderDataReady += OnTransponderDataReady;
-            var transponderParsing = new TransponderParsing(transponderDataReceiver);
+
+            var eventRendition = new EventRendition();
+            var logWriter = new LogWriter();
+            var seperationEvent = new SeperationEvent(logWriter, eventRendition);
+            var trackRendition = new TrackRendition();
+            var trackUpdater = new TrackUpdater(seperationEvent, trackRendition);
+            var trackingFiltering = new TrackingFiltering(trackUpdater);
+            
+            var transponderParsing = new TransponderParsing(transponderDataReceiver, trackingFiltering);
             
 
             Console.ReadLine();

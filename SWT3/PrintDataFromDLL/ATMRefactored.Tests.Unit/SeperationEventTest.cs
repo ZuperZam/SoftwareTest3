@@ -17,81 +17,54 @@ using TransponderReceiver;
 namespace ATMRefactored.Tests.Unit
 {
     [TestFixture]
-    public class EventRenditionTest
+    public class SeperationEventTest
     {
-        private IEventRendition _uut;
+        private ISeperationEvent _uut;
         TrackObject trackobject1;
         TrackObject trackobject2;
         List<String> list1;
         List<String> list2;
         List<TrackObject> trackObjectList;
         TupleList<TrackObject, TrackObject> tupleList;
+        private IEventRendition eventRendition;
+        private ILogWriter logWriter;
         [SetUp]
         public void Setup()
         {
-            _uut = new EventRendition();
+            eventRendition = Substitute.For<IEventRendition>();
+            logWriter = Substitute.For<ILogWriter>();
+
+            _uut = new SeperationEvent(logWriter, eventRendition);
             list1 = new List<string> {"MAR123", "50000", "50000", "1000", "20151006213456789"};
             list2 = new List<string> {"FRE123", "50000", "50000", "1000", "20151006213456789"};
             trackobject1 = new TrackObject(list1);
             trackobject2 = new TrackObject(list2);
-            trackObjectList = new List<TrackObject>(){};
+            trackObjectList = new List<TrackObject>();
             tupleList = new TupleList<TrackObject, TrackObject>();
         }
 
         [Test]
-        public void RenderEvents_LogsEvent()
+        public void CheckEvents_Calls_RenderEvent()
         {
             trackObjectList.Add(trackobject1);
             trackObjectList.Add(trackobject2);
-            _uut.RenderEvents(trackObjectList);
-            using (var stream = new MemoryStream())
-            using (var writer = new StreamWriter(stream))
-            {
+            _uut.CheckEvents(trackObjectList);
 
-                string[] lines = System.IO.File.ReadAllLines(@"SeparatationEventLog.txt");
-
-                Assert.AreEqual("Timestamp: 06-10-2015 21:34:56\tMAR123 and FRE123 are breaking separation rules", lines[0]);
-            }
+            eventRendition.Received().RenderEvent("MAR123 and FRE123 are breaking separation rules");
         }
 
         [Test]
-        public void LogSeparationEvent_LogsEvent_StartedBreakingSeperationRules()
+        public void LogSeperation_Calls_LogEvent()
         {
             tupleList.Add(trackobject1, trackobject2);
-
             _uut.LogSeparationEvent(tupleList);
 
-            
-            using (var stream = new MemoryStream())
-            using (var writer = new StreamWriter(stream))
-            {
-                string[] lines = System.IO.File.ReadAllLines(@"SeparatationEventLog.txt");
-                
-                Assert.AreEqual("Timestamp: 06-10-2015 21:34:56\tMAR123 and FRE123 are breaking separation rules", lines[0]);
-            }
+            logWriter.Received().LogEvent("Timestamp: 06-10-2015 21:34:56	MAR123 and FRE123 are breaking separation rules");
         }
 
-        [Test]
-        public void LogSeparationEvent_LogsEvent_StoppedBreakingSeperationRules(int i)
-        {
-            tupleList.Add(trackobject1, trackobject2);
 
-            _uut.LogSeparationEvent(tupleList);
 
-            tupleList.Clear();
-            tupleList.TrimExcess();
-            tupleList[0].Item1.Altitude = 500;
 
-            _uut.LogSeparationEvent(tupleList);
-            
-            using (var stream = new MemoryStream())
-            using (var writer = new StreamWriter(stream))
-            {
-                string[] lines = System.IO.File.ReadAllLines(@"SeparatationEventLog.txt");
-                
-                Assert.AreEqual("Timestamp: 06-10-2015 21:34:56\tMAR123 and FRE123 have stopped breaking seperation rules", lines[]);
-            }
-        }
 
         //Horizontal, no altitude difference
         [TestCase(5000, 9999, 1000, 1000)]

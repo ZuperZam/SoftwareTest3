@@ -8,5 +8,6 @@ namespace ATMRefactored.Interfaces
 {
     public interface ITrackRendition
     {
+        void RenderTrack(List<TrackObject> objectsToPrint);
     }
 }

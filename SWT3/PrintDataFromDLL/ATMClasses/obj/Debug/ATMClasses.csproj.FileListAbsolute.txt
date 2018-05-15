@@ -39,7 +39,6 @@ C:\Git\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.cspro
 C:\Git\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.csproj.CoreCompileInputs.cache
 C:\Git\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.dll
 C:\Git\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.pdb
-C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.csprojResolveAssemblyReference.cache
 C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\ATMClasses.dll
 C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\ATMClasses.pdb
 C:\Users\Frederik\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\bin\Debug\Castle.Core.dll
@@ -67,3 +66,4 @@ C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\AT
 C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.csproj.CopyComplete
 C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.dll
 C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.pdb
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATMClasses\obj\Debug\ATMClasses.csprojResolveAssemblyReference.cache

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ATMRefactored.Interfaces;
 
 namespace ATMRefactored
 {
-    public class TrackRendition
+    public class TrackRendition : ITrackRendition
     {
         public void RenderTrack(List<TrackObject> objectsToPrint)
         {

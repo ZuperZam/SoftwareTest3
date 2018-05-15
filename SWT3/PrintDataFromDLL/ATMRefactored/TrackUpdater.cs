@@ -14,13 +14,15 @@ namespace ATMRefactored
         public List<TrackObject> _oldTrackObjects { get; set; }
         
 
-        private EventRendition eventRendition = new EventRendition();
-        private TrackRendition trackRendition = new TrackRendition();
+        private ISeperationEvent _seperationEvent;
+        private ITrackRendition _trackRendition;
 
-        public TrackUpdater()
+        public TrackUpdater(ISeperationEvent seperationEvent, ITrackRendition trackRendition)
         {
             _oldTrackObjects = new List<TrackObject>();
-           
+            _seperationEvent = seperationEvent;
+            _trackRendition = trackRendition;
+
         }
 
         public void UpdateTracks(List<TrackObject> newTrackObjects)
@@ -49,8 +51,8 @@ namespace ATMRefactored
 
             for(int i = 0; i < 50; i++) //"Refreshes" screen without causing issues in tests
                 Console.WriteLine();
-            trackRendition.RenderTrack(_oldTrackObjects);
-            eventRendition.RenderEvents(_oldTrackObjects);
+            _trackRendition.RenderTrack(_oldTrackObjects);
+            _seperationEvent.CheckEvents(_oldTrackObjects);
 
         }
 

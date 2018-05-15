@@ -17,6 +17,7 @@ namespace ATMRefactored.Tests.Unit
     {
 		public TransponderParsing _uut;
         public ITransponderReceiver receiver;
+        public ITrackingFiltering trackingFiltering;
         private List<string> testList = new List<string>();
         private string Tag = "ATR423";
         private string X = "39045";
@@ -30,7 +31,8 @@ namespace ATMRefactored.Tests.Unit
         {
             
 	        receiver = Substitute.For<ITransponderReceiver>();
-            _uut = new TransponderParsing(receiver);
+            trackingFiltering = Substitute.For<ITrackingFiltering>();
+            _uut = new TransponderParsing(receiver,trackingFiltering);
 	        testList.Add(Tag);
 	        testList.Add(X);
 	        testList.Add(Y);

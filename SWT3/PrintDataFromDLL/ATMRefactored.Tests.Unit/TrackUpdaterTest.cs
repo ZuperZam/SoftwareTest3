@@ -24,12 +24,16 @@ namespace ATMRefactored.Tests.Unit
         List<String> list3;
         List<TrackObject> trackObjectList;
         int x1, x2, y1, y2;
-
+        private ISeperationEvent seperationEvent;
+        private ITrackRendition trackRendition;
         private ITrackUpdater _uut;
         [SetUp]
         public void Setup()
         {
-            _uut = new TrackUpdater();
+            seperationEvent = Substitute.For<ISeperationEvent>();
+            trackRendition = Substitute.For<ITrackRendition>();
+
+            _uut = new TrackUpdater(seperationEvent, trackRendition);
             list1 = new List<string> { "MAR123", "50000", "50000", "1000", "20151006213456789" };
             list2 = new List<string> { "FRE595", "50000", "50000", "1000", "20151006213456789" };
             list3 = new List<string> { "FRE595", "50050", "50050", "980", "20151006213458800" };

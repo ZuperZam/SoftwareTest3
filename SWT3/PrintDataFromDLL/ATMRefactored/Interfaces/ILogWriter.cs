@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ATMRefactored.Interfaces
 {
-    public interface IEventRendition
+    public interface ILogWriter
     {
-        void RenderEvent(string eventString);
+        void LogEvent(string eventMessage);
     }
 }

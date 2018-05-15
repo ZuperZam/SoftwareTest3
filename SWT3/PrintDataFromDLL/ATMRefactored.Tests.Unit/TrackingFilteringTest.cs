@@ -24,11 +24,13 @@ namespace ATMRefactored.Tests.Unit
         List<string> trackData;
         private TrackObject trackObject;
         private List<TrackObject> trackObjects;
+        private ITrackUpdater trackUpdater;
         private ITrackingFiltering _uut; 
         [SetUp]
         public void Setup()
         {
-            _uut = new TrackingFiltering();
+            trackUpdater = Substitute.For<ITrackUpdater>();
+            _uut = new TrackingFiltering(trackUpdater);
             trackData = new List<string> { "ATR423", "50000", "50000", "1000", "20151006213456789" };
             trackObject = new TrackObject(trackData);
             trackObjects = new List<TrackObject>();
