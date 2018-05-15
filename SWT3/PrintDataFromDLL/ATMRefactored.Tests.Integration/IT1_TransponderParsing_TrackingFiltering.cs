@@ -18,7 +18,7 @@ namespace ATMRefactored.Tests.Integration
     public class IT1_TransponderParsing_TrackingFiltering
     {
 
-        TransponderParsing _uut;
+        TransponderParsing _sut;
         TrackObject trackObject;
 
         ITrackingFiltering trackingFiltering;
@@ -38,7 +38,7 @@ namespace ATMRefactored.Tests.Integration
             receiver = Substitute.For<ITransponderReceiver>();
             trackUpdater = Substitute.For<ITrackUpdater>();
             trackingFiltering = new TrackingFiltering(trackUpdater);
-            _uut = new TransponderParsing(receiver, trackingFiltering);
+            _sut = new TransponderParsing(receiver, trackingFiltering);
             _transponderArgsList_Success = new List<string> { "ATR423;39045;12932;14000;20151006213456789" };
             _transponderArgsList_Failure = new List<string> { "ATR423;328085;12932;14000;20151006213456789" };
             _transponderDataEventArgs_Success = new RawTransponderDataEventArgs(_transponderArgsList_Success);
