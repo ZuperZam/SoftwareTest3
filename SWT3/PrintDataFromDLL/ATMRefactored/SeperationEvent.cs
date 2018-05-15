@@ -60,7 +60,6 @@ namespace ATMRefactored
         {
             bool isInList = false;
             bool isNotInList = true;
-            bool hasChanged = false;
 
             foreach (var newEventObject in TOList)
             {
@@ -79,8 +78,6 @@ namespace ATMRefactored
                                     newEventObject.Item1.Tag + " and " + newEventObject.Item2.Tag + " are breaking separation rules";
 
                     _LogWriter.LogEvent(output);
-
-                    hasChanged = true;
                 }
 
                 isInList = false;
@@ -103,25 +100,17 @@ namespace ATMRefactored
                                     oldEventObject.Item1.Tag + " and " + oldEventObject.Item2.Tag + " have stopped breaking seperation rules";
 
                     _LogWriter.LogEvent(output);
-
-                    hasChanged = true;
                 }
 
                 isNotInList = true;
             }
 
-            if (hasChanged)
-            {
                 _oldObjects.Clear();
-                //_oldObjects.TrimExcess();
 
                 foreach (var trackObject in TOList)
                 {
                     _oldObjects.Add(trackObject);
                 }
-                hasChanged = false;
-            }
-
         }
 
         public int CalculateDistance1D(int x1, int x2)
