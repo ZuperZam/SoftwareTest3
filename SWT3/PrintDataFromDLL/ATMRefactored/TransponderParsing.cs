@@ -35,9 +35,7 @@ namespace ATMRefactored
 
         public void MakeTrack(object sender, RawTransponderDataEventArgs e)
         {
-            //var IsInList = false;
-            //var trackObjects = new List<TrackObject>();
-            //if (trackObjects.Count > 0)
+           
             {
                 trackObjects.Clear();
                 

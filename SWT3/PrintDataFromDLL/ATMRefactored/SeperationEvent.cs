@@ -12,10 +12,11 @@ namespace ATMRefactored
     {
         private int verticalSeparation = 300;
         private int horizontalSeparation = 5000;
-        private TupleList<TrackObject, TrackObject> _conflictList;
-        private TupleList<TrackObject, TrackObject> _oldObjects;
+        public TupleList<TrackObject, TrackObject> _conflictList { get; set; }
+        public TupleList<TrackObject, TrackObject> _oldObjects { get; set; }
         public ILogWriter _LogWriter;
-        public IEventRendition _eventRendition; 
+        public IEventRendition _eventRendition;
+        
 
         public SeperationEvent(ILogWriter logWriter, IEventRendition eventRendition)
         {

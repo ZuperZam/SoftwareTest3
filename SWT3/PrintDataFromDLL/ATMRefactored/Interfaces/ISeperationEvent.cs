@@ -8,6 +8,8 @@ namespace ATMRefactored.Interfaces
 {
     public interface ISeperationEvent
     {
+        TupleList<TrackObject, TrackObject> _conflictList { get; set; }
+        TupleList<TrackObject, TrackObject> _oldObjects { get; set; }
         void CheckEvents(List<TrackObject> objectsToCheck);
         bool IsInOtherAirSpace(TrackObject TO1, TrackObject TO2);
 

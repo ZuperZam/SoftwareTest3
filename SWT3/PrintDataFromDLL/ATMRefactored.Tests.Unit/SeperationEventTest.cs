@@ -22,8 +22,10 @@ namespace ATMRefactored.Tests.Unit
         private ISeperationEvent _uut;
         TrackObject trackobject1;
         TrackObject trackobject2;
+        TrackObject trackObject3;
         List<String> list1;
         List<String> list2;
+        List<String> list3;
         List<TrackObject> trackObjectList;
         TupleList<TrackObject, TrackObject> tupleList;
         private IEventRendition eventRendition;
@@ -33,12 +35,14 @@ namespace ATMRefactored.Tests.Unit
         {
             eventRendition = Substitute.For<IEventRendition>();
             logWriter = Substitute.For<ILogWriter>();
-
+            
             _uut = new SeperationEvent(logWriter, eventRendition);
             list1 = new List<string> {"MAR123", "50000", "50000", "1000", "20151006213456789"};
             list2 = new List<string> {"FRE123", "50000", "50000", "1000", "20151006213456789"};
+            list3 = new List<string> { "FAT123", "50000", "50000", "1000", "20151006213456789" };
             trackobject1 = new TrackObject(list1);
             trackobject2 = new TrackObject(list2);
+            trackObject3 = new TrackObject(list3);
             trackObjectList = new List<TrackObject>();
             tupleList = new TupleList<TrackObject, TrackObject>();
         }
@@ -54,7 +58,17 @@ namespace ATMRefactored.Tests.Unit
         }
 
         [Test]
-        public void LogSeperation_Calls_LogEvent()
+        public void LogSeperation_DoesNotCall_LogEvent()
+        {
+            _uut._oldObjects.Add(trackobject1, trackobject2);
+            tupleList.Add(trackobject1, trackobject2);
+            _uut.LogSeparationEvent(tupleList);
+
+            logWriter.DidNotReceive().LogEvent("Timestamp: 06-10-2015 21:34:56	MAR123 and FRE123 are breaking separation rules");
+        }
+
+        [Test]
+        public void LogSeperation_Calls_LogEvent_BreakingRules()
         {
             tupleList.Add(trackobject1, trackobject2);
             _uut.LogSeparationEvent(tupleList);
@@ -62,8 +76,19 @@ namespace ATMRefactored.Tests.Unit
             logWriter.Received().LogEvent("Timestamp: 06-10-2015 21:34:56	MAR123 and FRE123 are breaking separation rules");
         }
 
+        [Test]
+        public void LogSeperation_Calls_LogEvent_StoppedBreakingRules()
+        {
+            
+            _uut._oldObjects.Add(trackobject1, trackobject2);
+            _uut._oldObjects.Add(trackobject1, trackObject3);
+            tupleList.Add(trackobject1, trackobject2);
+            
+            _uut.LogSeparationEvent(tupleList);
+            logWriter.Received()
+                .LogEvent("Timestamp: 06-10-2015 21:34:56	MAR123 and FAT123 have stopped breaking seperation rules");
 
-
+        }
 
 
         //Horizontal, no altitude difference
