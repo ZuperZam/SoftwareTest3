@@ -15,7 +15,7 @@ using TransponderReceiver;
 namespace ATMRefactored.Tests.Integration
 {
     [TestFixture]
-    public class IT1_TransponderParsing_TrackObject
+    public class IT1_TransponderParsing_TrackingFiltering
     {
 
         TransponderParsing _uut;
@@ -32,12 +32,6 @@ namespace ATMRefactored.Tests.Integration
         private RawTransponderDataEventArgs _transponderDataEventArgs_Success;
         private RawTransponderDataEventArgs _transponderDataEventArgs_Failure;
 
-
-        //private string Tag = "ATR423";
-        //private string X = "39045";
-        //private string Y = "12932";
-        //private string Alt = "14000";
-        //private string Timestamp = "20151006213456789";
         [SetUp]
         public void Setup()
         {
@@ -48,13 +42,7 @@ namespace ATMRefactored.Tests.Integration
             _transponderArgsList_Success = new List<string> { "ATR423;39045;12932;14000;20151006213456789" };
             _transponderArgsList_Failure = new List<string> { "ATR423;328085;12932;14000;20151006213456789" };
             _transponderDataEventArgs_Success = new RawTransponderDataEventArgs(_transponderArgsList_Success);
-            _transponderDataEventArgs_Failure = new RawTransponderDataEventArgs(_transponderArgsList_Success);
-            //trackObjectList = new List<TrackObject>();
-            //list = new List<string> {Tag, X, Y, Alt, Timestamp};
-            //trackObject =
-            //    new TrackObject(list) {PrettyTimeStamp = "October 6th, 2015, at 21:34:56 and 789 milliseconds"};
-            //trackObjectList.Add(trackObject);
-            
+            _transponderDataEventArgs_Failure = new RawTransponderDataEventArgs(_transponderArgsList_Failure);
         }
 
         public void RaiseFakeTransponderReceiverEvent_Success()
