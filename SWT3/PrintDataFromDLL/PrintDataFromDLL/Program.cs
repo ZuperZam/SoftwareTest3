@@ -5,8 +5,8 @@ using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using ATMClasses;
-using ATMClasses.Interfaces;
+
+using ATMRefactored;
 using TransponderReceiver;
 
 namespace PrintDataFromDLL
@@ -18,26 +18,22 @@ namespace PrintDataFromDLL
             var transponderDataReceiver = TransponderReceiverFactory.CreateTransponderDataReceiver();
             transponderDataReceiver.TransponderDataReady += OnTransponderDataReady;
 
-            var trackingValidation = new TrackingValidation();
-            var transponderParsing = new TransponderParsing();
-            var dateFormatter = new DateFormatter();
+            var eventRendition = new EventRendition();
+            var logWriter = new LogWriter();
+            var seperationEvent = new SeperationEvent(logWriter, eventRendition);
+            var trackRendition = new TrackRendition();
+            var trackUpdater = new TrackUpdater(seperationEvent, trackRendition);
+            var trackingFiltering = new TrackingFiltering(trackUpdater);
 
-            var distance = new Distance();
-            var velocityCourseCalculator =  new VelocityCourseCalculater(distance);
-            var trackUpdater = new TrackUpdater(velocityCourseCalculator);
-            var separationChecker = new SeparationChecker(distance);
-            var print = new Print();
+            var transponderParsing = new TransponderParsing(transponderDataReceiver, trackingFiltering);
 
-            ITrackListEvent objectifier = new Objectifier(transponderDataReceiver, trackingValidation, transponderParsing, dateFormatter);
 
-            var atmSystem = new ATMSystem(objectifier, trackUpdater, velocityCourseCalculator, separationChecker, print);
-
-            System.Console.ReadLine();
+            Console.ReadLine();
         }
 
         public static void OnTransponderDataReady(object sender, RawTransponderDataEventArgs e)
         {
-           
+
         }
     }
 }

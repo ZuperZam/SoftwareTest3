@@ -92,3 +92,6 @@ C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\AT
 C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\obj\Debug\ATM.Tests.Unit.csproj.CopyComplete
 C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\obj\Debug\ATM.Tests.Unit.dll
 C:\Users\Alexa\OneDrive\Dokumenter\GitHub\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\obj\Debug\ATM.Tests.Unit.pdb
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\ATMRefactored.pdb
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\ATMRefactored.dll
+C:\Users\Frederik KM\Dropbox\4. Semester\I4SWT\SoftwareTest3\SWT3\PrintDataFromDLL\ATM.Tests.Unit\bin\Debug\ATMRefactored.dll.config
