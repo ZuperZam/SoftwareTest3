@@ -73,10 +73,6 @@
       <Project>{9bd2ae51-48e8-4493-96fb-8d9794d17671}</Project>
       <Name>ATM.Tests.Integration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ATMClasses\ATMClasses.csproj">
-      <Project>{448fd3a9-ae18-4204-93c5-e8c878d175c7}</Project>
-      <Name>ATMClasses</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ATMRefactored\ATMRefactored.csproj">
       <Project>{b4ce5c46-bfdd-4d14-afd9-5859ee5d613f}</Project>
       <Name>ATMRefactored</Name>
