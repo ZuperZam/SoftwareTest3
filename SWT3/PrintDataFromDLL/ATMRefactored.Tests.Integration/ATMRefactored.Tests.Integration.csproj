@@ -64,7 +64,6 @@
     <Compile Include="IT1_TransponderParsing_TrackingFiltering.cs" />
     <Compile Include="IT2_TrackingFiltering_TrackUpdater.cs" />
     <Compile Include="IT3_TrackUpdater_SeperationEvent_TrackRendition.cs" />
-    <Compile Include="IT4_SeperationEvent_EventRendition_LogWriter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

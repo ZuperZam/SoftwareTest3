@@ -76,14 +76,14 @@ namespace ATMRefactored.Tests.Integration
         public void No_Separation_LogWriter()
         {
             RaiseFakeTransponderReceiverEvent_No_Separation();
-            logWriter.DidNotReceive().LogEvent("Timestamp: 10/6/2015 9:34:56 PM	FAT423 and MAR423 are breaking separation rules");
+            logWriter.DidNotReceive().LogEvent("Timestamp: 06/10/2015 21:34:56	FAT423 and MAR423 are breaking separation rules");
         }
 
         [Test]
         public void Separation_LogWriter()
         {
             RaiseFakeTransponderReceiverEvent_Separation();
-            logWriter.Received().LogEvent("Timestamp: 10/6/2015 9:34:56 PM	FAT423 and MAR423 are breaking separation rules");
+            logWriter.Received().LogEvent("Timestamp: 06/10/2015 21:34:56	FAT423 and MAR423 are breaking separation rules");
         }
     }
 }
